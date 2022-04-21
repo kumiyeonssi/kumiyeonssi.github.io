@@ -88,7 +88,7 @@
         <div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="section-headline text-center">
-              <h2>Stream~~</h2>
+              <button onclick="playVid()" type="button">Play Video</button>
             </div>
           </div>
         </div>
@@ -294,6 +294,14 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+  var vid = document.getElementsByClassName("embed-responsive-item"); 
+
+  function playVid() { 
+    vid.play(); 
+  } 
+
+  </script>
 
 </body>
 
