@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PM AFF Vietnam Newsletter</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700&display=swap');
+
+    :root {
+      --bg: #0b0b0b;
+      --panel: #141414;
+      --panel-2: #1b1b1b;
+      --text: #f2f2f2;
+      --muted: #b5b5b5;
+      --accent: #e5ff00;
+      --accent-2: #c9ff00;
+      --stroke: #2b2b2b;
+    }
+
+    .mb-8 {
+      margin-bottom: 8px !important;
+    }
+
+    .mb-16 {
+      margin-bottom: 16px !important;
+    }
+
+    .mb-32 {
+      margin-bottom: 32px !important;
+    }
+      
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: radial-gradient(circle at 30% 10%, rgba(229, 255, 0, 0.12), transparent 40%),
+        linear-gradient(180deg, #0b0b0b 0%, #101010 60%, #0b0b0b 100%);
+      color: var(--text);
+      font-family: "Montserrat", "Trebuchet MS", sans-serif;
+    }
+
+    .wrapper {
+      width: 100%;
+      padding: 24px 12px 60px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+      background: transparent;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #111 0%, #141414 55%, #0c0c0c 100%);
+      border-radius: 16px;
+      padding: 28px 28px 32px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero:before {
+      content: "";
+      position: absolute;
+      inset: -60px -40px auto auto;
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(229, 255, 0, 0.25), transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+
+    .logo span {
+      background: var(--accent);
+      color: #000;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-family: "Bebas Neue", "Montserrat", sans-serif;
+      font-size: 26px;
+    }
+
+    .logo-img {
+      display: block;
+      width: 130px;
+      height: auto;
+    }
+
+    .footer-logo {
+      width: 110px;
+      height: auto;
+      display: block;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 12px;
+    }
+
+    h1 {
+      font-family: "Bebas Neue", "Montserrat", sans-serif;
+      font-size: 44px;
+      line-height: 1;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .sub {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #000;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      padding: 12px 22px;
+      border-radius: 22px;
+      text-transform: uppercase;
+    }
+
+    .hero-visual {
+      display: block;
+    }
+
+    .hero-combined {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .section {
+      padding: 36px 6px 0;
+    }
+
+    .section-title {
+      font-family: "Bebas Neue", "Montserrat", sans-serif;
+      font-size: 28px;
+      letter-spacing: 1px;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .section-lead {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid rgba(229, 255, 0, 0.4);
+      border-radius: 12px;
+      padding: 24px 16px 16px;
+      min-height: 150px;
+      text-align: center;
+    }
+
+    .card h4 {
+      margin: 12px 0 8px;
+      font-size: 15px;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: rgba(229, 255, 0, 0.12);
+      border: 1px solid rgba(229, 255, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .icon-img {
+      width: 120px;
+      height: 120px;
+      display: block;
+      object-fit: contain;
+      margin: -62px auto 12px;
+      filter: drop-shadow(0 0 20px rgba(229, 255, 0, 0.75));
+    }
+
+    .tool-icon {
+      width: 46px;
+      height: 46px;
+      display: block;
+      object-fit: contain;
+      margin: 0 auto 8px;
+      filter: drop-shadow(0 0 10px rgba(229, 255, 0, 0.5));
+    }
+
+    .toolbox {
+      background: var(--panel-2);
+      border-radius: 16px;
+      padding: 22px;
+      border: 1px solid #232323;
+    }
+
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .tool {
+      background: #121212;
+      border-radius: 12px;
+      padding: 14px;
+      border: 1px solid #2a2a2a;
+      text-align: center;
+    }
+
+    .tool h5 {
+      margin: 8px 0 6px;
+      font-size: 13px;
+    }
+
+    .tool p {
+      margin: 0;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .revenue {
+      background: linear-gradient(135deg, #131313, #1b1b1b);
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      border: 1px solid #2a2a2a;
+    }
+
+    .formula {
+      display: inline-block;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 22px;
+      padding: 26px 46px;
+      margin: 16px 0 24px;
+      font-family: "Bebas Neue", "Montserrat", sans-serif;
+      font-size: 38px;
+      letter-spacing: 1px;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 16px 0 20px;
+    }
+
+    .mini {
+      background: #101010;
+      border-radius: 12px;
+      padding: 10px;
+      border: 1px solid #272727;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .mini-icon {
+      width: 56px;
+      height: 56px;
+      display: block;
+      object-fit: contain;
+      margin: 0 auto 8px;
+      filter: drop-shadow(0 0 12px rgba(229, 255, 0, 0.6));
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 18px;
+      align-items: center;
+      background: #111;
+      border-radius: 16px;
+      padding: 20px;
+      border: 1px solid #242424;
+    }
+
+    .support-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 8px;
+    }
+
+    .support-icon {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 14px rgba(229, 255, 0, 0.7));
+    }
+
+    .support-header h2 {
+      font-size: 57px;
+      line-height: 1;
+      margin: 0;
+      text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    .agent-photo {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      display: block;
+      margin-bottom: -20px;
+      filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.45));
+    }
+
+    .payments {
+      display: grid;
+      grid-template-columns: 0.9fr 1fr;
+      gap: 18px;
+      align-items: center;
+      background: #121212;
+      border-radius: 16px;
+      padding: 20px;
+      border: 1px solid #242424;
+    }
+
+    .payments-text {
+      text-align: right;
+    }
+
+    .payments-header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .payments-icon {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.45));
+    }
+
+    .payments-title {
+      font-family: "Bebas Neue", "Montserrat", sans-serif;
+      font-size: 32px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin: 0;
+      color: var(--text);
+      text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    .cash {
+      display: grid;
+      gap: 10px;
+    }
+
+    .cash .bill {
+      height: 54px;
+      border-radius: 8px;
+      background: linear-gradient(120deg, rgba(229, 255, 0, 0.2), rgba(255, 255, 255, 0.05));
+      border: 1px solid rgba(229, 255, 0, 0.35);
+      display: flex;
+      align-items: center;
+      padding-left: 12px;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    .payment-visual {
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.4));
+    }
+
+    .partners {
+      text-align: center;
+      padding: 20px;
+      border-radius: 16px;
+      background: #111;
+      border: 1px solid #242424;
+    }
+
+    .partner-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      margin-top: 16px;
+    }
+
+    .logo-badge {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: #191919;
+      border: 1px solid #2b2b2b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .partner-logo {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .footer {
+      padding: 40px 12px 18px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-title {
+      font-family: "Bebas Neue", "Montserrat", sans-serif;
+      font-size: 24px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+
+    .footer-contact {
+      display: grid;
+      gap: 6px;
+    }
+
+    .footer-bar {
+      margin-top: 26px;
+      padding: 16px 0 0;
+      border-top: 1px solid #222;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      align-items: center;
+      gap: 12px;
+    }
+
+    @media (max-width: 640px) {
+      .hero-grid,
+      .split,
+      .payments,
+      .card-grid,
+      .tool-grid,
+      .mini-grid,
+      .hero-visual {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 22px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .partner-logos {
+        flex-direction: column;
+      }
+
+      .footer-bar {
+        flex-direction: column;
+        gap: 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <section class="hero">
+        <div class="hero-grid">
+          <div>
+            <img class="logo-img mb-16" src="https://res.cloudinary.com/dpdeg8qt5/image/upload/v1767851214/pm-aff_ifo1dq.png" alt="PM AFF" />
+            <h1>Dominate the Vietnam Market</h1>
+            <p class="sub">Global Legend (Est. 1994). Localized for VN Affiliates.</p>
+            <a class="btn" href="#">Become a Partner</a>
+          </div>
+          <div class="hero-visual">
+            <img class="hero-combined" src="https://res.cloudinary.com/dpdeg8qt5/image/upload/v1767848098/hero_img_f2kj4x.png" alt="Player and app screen" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title mb-32">Why Parimatch?</div>
+        <div class="card-grid">
+          <div class="card">
+            <img class="icon-img" src="https://res.cloudinary.com/dpdeg8qt5/image/upload/v1767850156/icon_global-power_oev0fh.png" alt="Global Power" />
+            <h4>Global Power</h4>
+            <p>Official partner of Manchester United and Leeds United. International trust.</p>
+          </div>
+          <div class="card">
+            <img class="icon-img" src="https://res.cloudinary.com/dpdeg8qt5/image/upload/v1767850155/icon_tech-first_jvqvbd.png" alt="Tech-first" />
+            <h4>Tech-first</h4>
+            <p>Precision tracking, real-time data, built for performance-driven affiliates.</p>
+          </div>
+          <div class="card">
+            <img class="icon-img" src="https://res.cloudinary.com/dpdeg8qt5/image/upload/v1767850155/icon_market-leader_gidmyh.png" alt="Market Leader" />
+            <h4>Market Leader</h4>
+            <p>30 years of market leadership in Europe with strong SEA conversions.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">Your Partner Toolbox</div>
+        <div class="section-lead">Everything you need to succeed in Vietnam.</div>
+        <div class="toolbox">
+          <div class="tool-grid">
+            <div class="tool">
+              <img class="tool-icon" src="https://res.cloudinary.com/dpdeg8qt5/image/upload/v1767853018/icon_estimate_z8gpx6.png" alt="NGR Calculator" />
+              <h5>NGR Calculator</h5>
+              <p>Transparent math to forecast profits.</p>
+            </div>
+            <div class="tool">
+              <img class="tool-icon" src="https://res.cloudinary.com/dpdeg8qt5/image/upload/v1767853018/icon_payment_zumgeq.png" alt="Payment Methods" />
+              <h5>Payment Methods</h5>
+              <p>Local banking and crypto methods.</p>
+            </div>
+            <div class="tool">
+              <img class="tool-icon" src="https://res.cloudinary.com/dpdeg8qt5/image/upload/v1767853018/icon_calendar_nntfjy.png" alt="Payout Frequency" />
+              <h5>Payout Frequency</h5>
+              <p>Weekly payouts to keep cash flow fast.</p>
+            </div>
+            <div class="tool">
+              <img class="tool-icon" src="https://res.cloudinary.com/dpdeg8qt5/image/upload/v1767853018/icon_internet_rys9nz.png" alt="Affiliate Portal" />
+              <h5>Affiliate Portal</h5>
+              <p>Real-time tracking dashboard.</p>
+            </div>
+            <div class="tool">
+              <img class="tool-icon" src="https://res.cloudinary.com/dpdeg8qt5/image/upload/v1767853018/icon_document_g2scg0.png" alt="Terms and Conditions" />
+              <h5>Terms &amp; Conditions</h5>
+              <p>Fair terms to grow long-term.</p>
+            </div>
+            <div class="tool">
+              <img class="tool-icon" src="https://res.cloudinary.com/dpdeg8qt5/image/upload/v1767853018/icon_laptop_buc7eh.png" alt="Marketing Assets" />
+              <h5>Marketing Assets</h5>
+              <p>Banners, creatives, and localized tools.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">Transparent Revenue Share</div>
+        <div class="revenue">
+          <div class="formula">NGR = GGR - BONUSES</div>
+          <div class="mini-grid">
+            <div class="mini">
+              <img class="mini-icon" src="https://res.cloudinary.com/dpdeg8qt5/image/upload/v1767857075/icon_fast_frz3r2.png" alt="CPA" />
+              <strong>CPA</strong><br>Agreed on high payouts
+            </div>
+            <div class="mini">
+              <img class="mini-icon" src="https://res.cloudinary.com/dpdeg8qt5/image/upload/v1767857075/icon_money_dzabm9.png" alt="RevShare" />
+              <strong>RevShare</strong><br>Up to 45% lifetime commission
+            </div>
+            <div class="mini">
+              <img class="mini-icon" src="https://res.cloudinary.com/dpdeg8qt5/image/upload/v1767857075/icon_hybrid_iumbrm.png" alt="Hybrid" />
+              <strong>Hybrid</strong><br>Hybrid payouts for maximum profit
+            </div>
+          </div>
+          <a class="btn" href="#">Become a Partner</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="split">
+          <div>
+            <div class="support-header">
+              <h2>24/7</h2>
+              <img class="support-icon" src="https://res.cloudinary.com/dpdeg8qt5/image/upload/v1767857075/icon_customer-service--_lvh9gn.png" alt="Support" />
+            </div>
+            <div class="section-title" style="margin-bottom: 10px;">Vietnamese Support</div>
+            <p class="section-lead">Local Vietnamese experts providing fast, no-friction player support.</p>
+            <a class="btn" href="#">Become a Partner</a>
+          </div>
+          <div>
+            <img class="agent-photo" src="https://res.cloudinary.com/dpdeg8qt5/image/upload/v1767857075/icon_customer-service_fuduie.png" alt="Support agent" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="payments">
+          <div>
+            <img class="payment-visual" src="https://res.cloudinary.com/dpdeg8qt5/image/upload/v1767859128/icon_mobile-money_hjzcbl.png" alt="Localized payments" />
+          </div>
+          <div class="payments-text">
+            <div class="payments-header">
+              <img class="payments-icon" src="https://res.cloudinary.com/dpdeg8qt5/image/upload/v1767857075/icon_localized-payment_m4arjm.png" alt="Localized payments" />
+              <h2 class="payments-title">Localized Payments</h2>
+            </div>
+            <p class="section-lead">Seamless player flow with local channel integration.</p>
+            <a class="btn" href="#">Become a Partner</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="partners">
+          <div class="section-title">Official Partners</div>
+          <div class="section-lead">DOI TAC CHINH THUC</div>
+          <div class="partner-logos">
+            <img class="partner-logo" src="https://res.cloudinary.com/dpdeg8qt5/image/upload/v1767860254/Manchester_United_lxifsa.png" alt="Manchester United" />
+            <img class="partner-logo" src="https://res.cloudinary.com/dpdeg8qt5/image/upload/v1767860309/leeds-united-fc_mfdjfz.png" alt="Leeds United" />
+          </div>
+        </div>
+      </section>
+
+      <section class="footer">
+        <div class="footer-title">Ready to start? Chat with an affiliate manager now</div>
+        <div class="footer-contact">
+          <div>Telegram: @ParimatchVN_AFF</div>
+          <div>Email Address: affiliates.parimatchvn@gmail.com</div>
+          <div>Terms &amp; Conditions: https://pmaffiliate.com</div>
+        </div>
+        <div class="footer-bar">
+          <div><img class="footer-logo" src="https://res.cloudinary.com/dpdeg8qt5/image/upload/v1767851214/pm-aff_ifo1dq.png" alt="PM AFF" /></div>
+          <div>Copyright 2025 PM AFF | All Rights Reserved</div>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
