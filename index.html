@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kristine Estuaria | Web Designer Portfolio</title>
+  <meta name="description" content="Portfolio of Kristine Estuaria, web designer and front-end developer.">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header"><div class="container nav-wrap"><a class="logo" href="index.html"><span>Kristine</span> Estuaria</a><button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false">Menu</button><nav class="site-nav" id="site-nav">
+      <a class="active" href="index.html">Home</a>
+      <div class="nav-item has-dropdown">
+        <a href="projects.html">Projects</a>
+        <div class="dropdown">
+          <a href="sliceo.html">Sliceo</a>
+          <a href="unified-global.html">Unified Global</a>
+          <a href="landing-pages.html">Landing Pages</a>
+          <a href="others.html">Digital Assets</a>
+        </div>
+      </div>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav></div></header>
+<main>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">Web Designer / Developer</p>
+      <h1>Designing clean, fast websites that feel premium and convert.</h1>
+      <p class="lede">I create responsive websites, landing pages, campaign visuals, and email designs that balance visual polish, usability, and practical front-end implementation.</p>
+      <div class="hero-actions"><a class="btn primary" href="projects.html">View Selected Work</a><a class="btn secondary" href="contact.html">Contact Me</a></div>
+    </div>
+    <div class="hero-card portfolio-preview">
+      <span class="preview-kicker">Portfolio Focus</span>
+      <div class="preview-lines"><span></span><span></span><span></span></div>
+      <h2>Websites, landing pages, newsletters, and brand-forward digital layouts.</h2>
+      <div class="mini-metrics"><div><strong>9+ yrs</strong><span>web/front-end</span></div><div><strong>4</strong><span>core work areas</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="section"><div class="container"><div class="section-header"><p class="eyebrow">Selected Work</p><h2>Portfolio highlights</h2><p>A curated mix of client work and personal explorations across websites, marketing design, landing pages, and newsletters.</p></div>
+<div class="project-grid">
+  <article class="project-card featured"><div class="project-thumb navy"><span>Sliceo</span></div><div class="project-body"><p class="project-type">Consulting brand / web design</p><h3>Sliceo</h3><p>Website direction, LinkedIn campaign visuals, and operational storytelling for a PropTech consulting brand.</p><a href="sliceo.html">View case study →</a></div></article>
+  <article class="project-card"><div class="project-thumb green"><span>Unified Global</span></div><div class="project-body"><p class="project-type">Website redesign / WordPress</p><h3>Unified Global Solutions</h3><p>Website redesign, migration support, responsive QA, and UX cleanup.</p><a href="unified-global.html">View case study →</a></div></article>
+  <article class="project-card"><div class="project-thumb warm"><span>Landing Pages</span></div><div class="project-body"><p class="project-type">Personal + client samples</p><h3>Landing Pages & Web Builds</h3><p>WordPress, Wix, Shopify, and custom HTML/CSS samples with live links.</p><a href="landing-pages.html">View collection →</a></div></article>
+  <article class="project-card"><div class="project-thumb purple"><span>Digital Assets</span></div><div class="project-body"><p class="project-type">Others</p><p>Supporting creative work including branded newsletters, email campaigns, presentation decks, landing pages, and other marketing materials.</p><a href="others.html">View collection →</a></div></article>
+</div></div></section>
+<section class="section"><div class="container"><div class="cta-band"><div><p class="eyebrow">Designer application portfolio</p><h2>Built to show range without feeling scattered.</h2><p>The structure keeps Sliceo and Unified Global as the main case studies, then supports them with landing page, newsletter, and personal web design work.</p></div><a class="btn light" href="projects.html">Explore Projects</a></div></div></section>
+</main>
+<footer class="site-footer"><div class="container footer-wrap"><span>© 2026 Kristine Estuaria</span><span>Web Designer • UI/UX • Front-End</span></div></footer>
+<script>const navToggle=document.querySelector('.nav-toggle');const siteNav=document.querySelector('.site-nav');if(navToggle&&siteNav){navToggle.addEventListener('click',()=>{const isOpen=siteNav.classList.toggle('open');navToggle.setAttribute('aria-expanded',String(isOpen));});siteNav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{siteNav.classList.remove('open');navToggle.setAttribute('aria-expanded','false');}));window.addEventListener('resize',()=>{if(window.innerWidth>860){siteNav.classList.remove('open');navToggle.setAttribute('aria-expanded','false');}});}</script>
+</body>
+</html>

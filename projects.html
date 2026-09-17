@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects | Kristine Estuaria</title>
+  <meta name="description" content="Portfolio of Kristine Estuaria, web designer and front-end developer.">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header"><div class="container nav-wrap"><a class="logo" href="index.html"><span>Kristine</span> Estuaria</a><button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false">Menu</button><nav class="site-nav" id="site-nav">
+      <a href="index.html">Home</a>
+      <div class="nav-item has-dropdown">
+        <a class="active" href="projects.html">Projects</a>
+        <div class="dropdown">
+          <a href="sliceo.html">Sliceo</a>
+          <a href="unified-global.html">Unified Global</a>
+          <a href="landing-pages.html">Landing Pages</a>
+          <a href="others.html">Digital Assets</a>
+        </div>
+      </div>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav></div></header>
+<main>
+<section class="page-hero"><div class="container"><p class="eyebrow">Projects</p><h1>Selected work across websites, campaigns, and digital layouts.</h1><p class="lede">A focused portfolio for designer applications, organized around case studies and supporting collections.</p></div></section>
+<section class="section"><div class="container"><div class="project-grid">
+  <article class="project-card featured"><div class="project-thumb navy"><span>01</span></div><div class="project-body"><p class="project-type">Featured case study</p><h3>Sliceo</h3><p>Website strategy, consulting brand presentation, LinkedIn design concepts, and operational infographics.</p><div class="tags"><span>Web Design</span><span>Brand Direction</span><span>LinkedIn</span></div><a href="sliceo.html">Open project →</a></div></article>
+  <article class="project-card featured"><div class="project-thumb green"><span>02</span></div><div class="project-body"><p class="project-type">Featured case study</p><h3>Unified Global Solutions</h3><p>WordPress redesign and migration support with UX, responsive, SEO, and launch QA improvements.</p><div class="tags"><span>WordPress</span><span>UX Cleanup</span><span>Front-End</span></div><a href="unified-global.html">Open project →</a></div></article>
+  <article class="project-card"><div class="project-thumb warm"><span>03</span></div><div class="project-body"><p class="project-type">Collection</p><h3>Landing Pages & Web Builds</h3><p>Live samples from personal and client-style projects across WordPress, Wix, Shopify, and custom HTML/CSS.</p><div class="tags"><span>Landing Pages</span><span>Responsive</span><span>Conversion</span></div><a href="landing-pages.html">Open collection →</a></div></article>
+  <article class="project-card"><div class="project-thumb purple"><span>04</span></div><div class="project-body"><p class="project-type">Collection</p><h3>Email & Newsletter Design</h3><p>Email layout samples focused on brand consistency, readable sections, and HTML-ready structure.</p><div class="tags"><span>Email</span><span>Newsletter</span><span>HTML</span></div><a href="others.html">Open collection →</a></div></article>
+</div></div></section></main>
+<footer class="site-footer"><div class="container footer-wrap"><span>© 2026 Kristine Estuaria</span><span>Web Designer • UI/UX • Front-End</span></div></footer>
+<script>const navToggle=document.querySelector('.nav-toggle');const siteNav=document.querySelector('.site-nav');if(navToggle&&siteNav){navToggle.addEventListener('click',()=>{const isOpen=siteNav.classList.toggle('open');navToggle.setAttribute('aria-expanded',String(isOpen));});siteNav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{siteNav.classList.remove('open');navToggle.setAttribute('aria-expanded','false');}));window.addEventListener('resize',()=>{if(window.innerWidth>860){siteNav.classList.remove('open');navToggle.setAttribute('aria-expanded','false');}});}</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Kristine Estuaria</title>
+  <meta name="description" content="Portfolio of Kristine Estuaria, web designer and front-end developer.">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header"><div class="container nav-wrap"><a class="logo" href="index.html"><span>Kristine</span> Estuaria</a><button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false">Menu</button><nav class="site-nav" id="site-nav">
+      <a href="index.html">Home</a>
+      <div class="nav-item has-dropdown">
+        <a href="projects.html">Projects</a>
+        <div class="dropdown">
+          <a href="sliceo.html">Sliceo</a>
+          <a href="unified-global.html">Unified Global</a>
+          <a href="landing-pages.html">Landing Pages</a>
+          <a href="others.html">Digital Assets</a>
+        </div>
+      </div>
+      <a href="about.html">About</a>
+      <a class="active" href="contact.html">Contact</a>
+    </nav></div></header>
+<main>
+<section class="page-hero"><div class="container"><p class="eyebrow">Contact</p><h1>Let’s connect.</h1><p class="lede">For designer roles, freelance work, or portfolio inquiries, you can reach me through email.</p></div></section>
+<section class="section"><div class="container"><div class="contact-card"><h2>Contact details</h2><p>Email: <a href="mailto:kristine.estuaria@gmail.com">kristine.estuaria@gmail.com</a></p><p>Portfolio samples: <a href="https://designs.ktinelucille.com/" target="_blank" rel="noopener">designs.ktinelucille.com ↗</a></p><p>LinkedIn: <a href="https://www.linkedin.com/in/kristine-lucille/">https://www.linkedin.com/in/kristine-lucille/</a></p><p>Location: Metro Manila, Philippines</p></div></div></section></main>
+<footer class="site-footer"><div class="container footer-wrap"><span>© 2026 Kristine Estuaria</span><span>Web Designer • UI/UX • Front-End</span></div></footer>
+<script>const navToggle=document.querySelector('.nav-toggle');const siteNav=document.querySelector('.site-nav');if(navToggle&&siteNav){navToggle.addEventListener('click',()=>{const isOpen=siteNav.classList.toggle('open');navToggle.setAttribute('aria-expanded',String(isOpen));});siteNav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{siteNav.classList.remove('open');navToggle.setAttribute('aria-expanded','false');}));window.addEventListener('resize',()=>{if(window.innerWidth>860){siteNav.classList.remove('open');navToggle.setAttribute('aria-expanded','false');}});}</script>
+</body>
+</html>

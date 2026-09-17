@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About | Kristine Estuaria</title>
+  <meta name="description" content="Portfolio of Kristine Estuaria, web designer and front-end developer.">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header"><div class="container nav-wrap"><a class="logo" href="index.html"><span>Kristine</span> Estuaria</a><button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false">Menu</button><nav class="site-nav" id="site-nav">
+      <a href="index.html">Home</a>
+      <div class="nav-item has-dropdown">
+        <a href="projects.html">Projects</a>
+        <div class="dropdown">
+          <a href="sliceo.html">Sliceo</a>
+          <a href="unified-global.html">Unified Global</a>
+          <a href="landing-pages.html">Landing Pages</a>
+          <a href="others.html">Digital Assets</a>
+        </div>
+      </div>
+      <a class="active" href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav></div></header>
+<main>
+<section class="page-hero"><div class="container"><p class="eyebrow">About</p><h1>Designer with front-end and WordPress experience.</h1><p class="lede">I combine visual design, website implementation, and practical problem-solving to create digital experiences that are polished, usable, and realistic to build.</p></div></section>
+<section class="section"><div class="container content-grid"><aside class="side-panel"><ul class="detail-list"><li><strong>Based in</strong>Metro Manila, Philippines</li><li><strong>Experience</strong>9+ years in web and front-end work</li><li><strong>Strengths</strong>Web design, UI/UX, WordPress, front-end</li><li><strong>Tools</strong>WordPress, Elementor, Figma, Photoshop, GitHub</li></ul></aside><div class="case-content"><div class="copy-block"><h2>Profile</h2><p>I’m a web designer and front-end developer who enjoys turning ideas into clear, usable digital experiences. My work often sits between design, content, and implementation, which helps me create designs that are visually strong and practical to build.</p></div><div class="copy-block"><h2>What I bring</h2><ul><li>Responsive website design and page layout</li><li>Landing page and campaign design</li><li>Email and newsletter design</li><li>WordPress and Elementor implementation</li><li>Design QA, troubleshooting, and launch support</li></ul></div></div></div></section></main>
+<footer class="site-footer"><div class="container footer-wrap"><span>© 2026 Kristine Estuaria</span><span>Web Designer • UI/UX • Front-End</span></div></footer>
+<script>const navToggle=document.querySelector('.nav-toggle');const siteNav=document.querySelector('.site-nav');if(navToggle&&siteNav){navToggle.addEventListener('click',()=>{const isOpen=siteNav.classList.toggle('open');navToggle.setAttribute('aria-expanded',String(isOpen));});siteNav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{siteNav.classList.remove('open');navToggle.setAttribute('aria-expanded','false');}));window.addEventListener('resize',()=>{if(window.innerWidth>860){siteNav.classList.remove('open');navToggle.setAttribute('aria-expanded','false');}});}</script>
+</body>
+</html>

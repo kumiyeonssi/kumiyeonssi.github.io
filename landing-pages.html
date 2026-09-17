@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Landing Pages & Web Builds | Kristine Estuaria</title>
+  <meta name="description" content="Portfolio of Kristine Estuaria, web designer and front-end developer.">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header"><div class="container nav-wrap"><a class="logo" href="index.html"><span>Kristine</span> Estuaria</a><button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false">Menu</button><nav class="site-nav" id="site-nav">
+      <a href="index.html">Home</a>
+      <div class="nav-item has-dropdown">
+        <a class="active" href="projects.html">Projects</a>
+        <div class="dropdown">
+          <a href="sliceo.html">Sliceo</a>
+          <a href="unified-global.html">Unified Global</a>
+          <a href="landing-pages.html">Landing Pages</a>
+          <a href="others.html">Digital Assets</a>
+        </div>
+      </div>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav></div></header>
+<main>
+<section class="page-hero"><div class="container"><p class="eyebrow">Collection</p><h1>Landing Pages & Web Builds</h1><p class="lede">A collection of live website samples and personal web builds focused on clear hierarchy, responsive layouts, and conversion-friendly sections.</p></section>
+<section class="section"><div class="container"><div class="section-header"><p class="eyebrow">Live Samples</p><h2>Selected landing page work</h2><p>These samples are linked as live projects so reviewers can see the layouts directly.</p></div><div class="project-grid live-grid">
+  <article class="project-card"><div class="project-thumb warm"><span>Landing Page</span></div><div class="project-body"><p class="project-type">WordPress / Elementor / Responsive</p><h3>Project One — Landing Page</h3><p>One-page funnel with clear hierarchy, fast load, and strong CTA placement.</p><div class="tags"><span>WordPress</span><span>Elementor</span><span>Responsive</span></div><a href="https://myportfolio-1.imnotktinelucille.com/" target="_blank" rel="noopener">View live page ↗</a></div></article>
+  <article class="project-card"><div class="project-thumb cream"><span>Small Business</span></div><div class="project-body"><p class="project-type">Wix / UI polish / SEO basics</p><h3>Project Two — Small Business Site</h3><p>Multi-section marketing site with clean typography and consistent spacing.</p><div class="tags"><span>Wix</span><span>UI Polish</span><span>SEO Basics</span></div><a href="https://kristineestuaria.wixstudio.com/" target="_blank" rel="noopener">View live page ↗</a></div></article>
+  <article class="project-card"><div class="project-thumb green"><span>E-commerce</span></div><div class="project-body"><p class="project-type">Shopify / Theme edits / UX</p><h3>Project Three — E-commerce</h3><p>Shop layout improvements, product page cleanup, and mobile-first adjustments.</p><div class="tags"><span>Shopify</span><span>Theme Edits</span><span>UX</span></div><a href="https://brew-biz-coffee.myshopify.com/" target="_blank" rel="noopener">View live page ↗</a></div></article>
+</div></div></section>
+<section class="section"><div class="container"><div class="copy-block feature-note"><h2>Design focus</h2><ul><li>Clear above-the-fold messaging and CTA placement</li><li>Consistent spacing, typography, and responsive behavior</li><li>Adaptable builds across WordPress, Wix, Shopify, and custom HTML/CSS</li><li>Clean presentation that makes each page easy for a reviewer to evaluate</li></ul></div></div></section></main>
+<footer class="site-footer"><div class="container footer-wrap"><span>© 2026 Kristine Estuaria</span><span>Web Designer • UI/UX • Front-End</span></div></footer>
+<script>const navToggle=document.querySelector('.nav-toggle');const siteNav=document.querySelector('.site-nav');if(navToggle&&siteNav){navToggle.addEventListener('click',()=>{const isOpen=siteNav.classList.toggle('open');navToggle.setAttribute('aria-expanded',String(isOpen));});siteNav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{siteNav.classList.remove('open');navToggle.setAttribute('aria-expanded','false');}));window.addEventListener('resize',()=>{if(window.innerWidth>860){siteNav.classList.remove('open');navToggle.setAttribute('aria-expanded','false');}});}</script>
+</body>
+</html>
