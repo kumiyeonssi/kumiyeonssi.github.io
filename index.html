@@ -1,55 +1,796 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kristine Estuaria | Web Designer Portfolio</title>
-  <meta name="description" content="Portfolio of Kristine Estuaria, web designer and front-end developer.">
-  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Portfolio of Kristine Estuaria, a graphic and digital designer in Metro Manila specializing in casino campaigns, brand systems, email, and web layouts.">
+<title>Kristine Estuaria | Casino Graphic Designer</title>
+<link rel="icon" type="image/svg+xml" href="assets/b-pixel-icon.svg">
+<link rel="shortcut icon" href="assets/b-pixel-icon.png">
+<link rel="apple-touch-icon" href="assets/b-pixel-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kristine Estuaria">
+<meta property="og:title" content="Kristine Estuaria | Casino Graphic Designer">
+<meta property="og:description" content="Campaign design for casino brands, with 11 years in iGaming.">
+<meta property="og:image" content="assets/og-image.svg">
+<meta property="og:image:type" content="image/svg+xml">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kristine Estuaria | Casino Graphic Designer">
+<meta name="twitter:description" content="Campaign design for casino brands, with 11 years in iGaming.">
+<meta name="twitter:image" content="assets/og-image.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@600;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#F8FAFC; --bg-alt:#F1F5F9; --card:#FFFFFF; --ink:#0F172A; --body:#475569; --soft:#64748B;
+  --line:#E2E8F0; --indigo:#6366F1; --pink:#EC4899; --green:#10B981; --navy:#0B1224;
+  --grad:linear-gradient(135deg,#6366F1 0%,#EC4899 100%);
+  --shadow:0 8px 32px rgba(15,23,42,.08);
+  --head:"Space Grotesk",system-ui,sans-serif;
+  --text:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--text)}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:3px solid var(--indigo);outline-offset:3px;border-radius:12px}
+.wrap{max-width:1000px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--head);margin:0;text-wrap:balance;letter-spacing:-.01em}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;font-size:13px;font-weight:500}
+.pill.indigo{background:#EEF0FF;color:#4F46E5}
+.pill.green{background:#DCFCE7;color:#047857}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border-radius:12px;font-weight:600;font-size:15px;border:0;cursor:pointer;font-family:var(--text);transition:transform .2s,box-shadow .2s,background .2s}
+.btn.primary{background:var(--grad);color:#fff}
+.btn.primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px -8px rgba(236,72,153,.55)}
+.btn.outline{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+.btn.outline:hover{border-color:var(--indigo)}
+.btn.soft{background:var(--bg-alt);color:var(--ink);width:100%}
+.btn.soft:hover{background:#E8EDF5}
+.btn svg{width:18px;height:18px}
+.sec{padding-block:88px}
+.sec.alt{background:var(--bg-alt)}
+.sec-head{text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:48px}
+.sec-head h2{font-size:clamp(32px,4.4vw,44px);line-height:1.1}
+.sec-head p{margin:0;color:var(--body);font-size:17px;max-width:36em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:24px}
+
+/* nav */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(248,250,252,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--head);font-weight:700;font-size:19px}
+.logo-mark{width:34px;height:34px;display:block;flex-shrink:0}
+nav.links{display:flex;gap:28px;font-size:15px;color:var(--body)}
+nav.links a:hover{color:var(--ink)}
+header .btn{min-height:40px;padding:0 18px;font-size:14px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding-block:72px 96px;--mx:50%;--my:42%;--spotlight-opacity:0}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:var(--spotlight-opacity);background:radial-gradient(420px circle at var(--mx) var(--my),rgba(99,102,241,.14),transparent 68%);transition:opacity .35s ease}
+.blob{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none}
+.blob.a{width:460px;height:460px;left:-200px;bottom:-80px;background:rgba(236,72,153,.16);animation:heroDriftA 14s ease-in-out infinite alternate}
+.blob.b{width:520px;height:520px;right:-180px;top:-120px;background:rgba(99,102,241,.14);animation:heroDriftB 18s ease-in-out infinite alternate}
+.hero .wrap{position:relative;max-width:760px}
+.hero h1{font-size:clamp(42px,6vw,60px);line-height:1.05;margin-block:20px;background-size:200% 100%;animation:heroReveal .7s .08s cubic-bezier(.2,.75,.25,1) both}
+.hero h1 .grad-text{background-size:200% 100%;animation:heroGradient 7s ease-in-out infinite alternate}
+.hero .lede{margin:0 0 28px;font-size:19px;color:var(--body);max-width:30em}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px}
+.stats{display:flex;flex-wrap:wrap;gap:32px;margin-top:36px}
+.stats b{display:block;font:700 28px/1.1 var(--head)}
+.stats span{font-size:13px;color:var(--soft)}
+.hero .pill,.hero .lede,.hero .ctas,.hero .stats{animation:heroReveal .7s cubic-bezier(.2,.75,.25,1) both}
+.hero .pill{animation-delay:0s}
+.hero .lede{animation-delay:.18s}
+.hero .ctas{animation-delay:.28s}
+.hero .stats{animation-delay:.38s}
+.hero .btn{will-change:transform}
+.hero .btn:active{transform:translateY(1px) scale(.98)}
+@keyframes heroReveal{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes heroGradient{from{background-position:0% 50%}to{background-position:100% 50%}}
+@keyframes heroDriftA{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(34px,-18px,0) scale(1.06)}}
+@keyframes heroDriftB{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(-28px,24px,0) scale(1.04)}}
+
+
+/* mock art (stand-ins until real screenshots are added) */
+.art-banner{aspect-ratio:4/5;background:radial-gradient(circle at 72% 22%,#FF8BD1 0 13%,transparent 14%),linear-gradient(160deg,#3A1C8F,#B62E9E 68%,#FF9A5A);color:#fff;padding:18px;display:flex;flex-direction:column;justify-content:flex-end;gap:10px}
+.art-banner small{font:600 10px var(--text);letter-spacing:.16em;opacity:.85}
+.art-banner strong{font:700 28px/1 var(--head);letter-spacing:-.02em}
+.art-banner em{align-self:flex-start;font:700 10px var(--text);font-style:normal;letter-spacing:.1em;background:#FFD84D;color:#2A1060;padding:7px 11px;border-radius:999px}
+.art-slide{aspect-ratio:1;background:#0F172A;color:#fff;padding:18px;display:flex;flex-direction:column;justify-content:space-between}
+.art-slide small{font:600 10px var(--text);letter-spacing:.16em;color:#A5B4FC}
+.art-slide strong{font:600 19px/1.15 var(--head)}
+.art-slide strong span{color:#F9A8D4}
+.art-slide .ba{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.art-slide .ba i{height:26px;border-radius:6px;background:#1E293B;font:600 9px/26px var(--text);text-align:center;font-style:normal;color:#94A3B8;letter-spacing:.08em}
+.art-slide .ba i:last-child{background:var(--grad);color:#fff}
+.art-news{aspect-ratio:4/3;background:#E0F2EA;display:grid;place-items:center;padding:16px}
+.art-news .mail{width:64%;height:100%;background:#fff;border-radius:6px;padding:8px;display:flex;flex-direction:column;gap:6px;box-shadow:0 8px 20px -10px rgba(15,23,42,.35)}
+.art-news .mh{height:14%;background:#0E6B4A;border-radius:3px}
+.art-news .hr{flex:1.4;border-radius:3px;background:linear-gradient(135deg,#CFE9DC,#86D1A9)}
+.art-news .ln{height:5px;border-radius:3px;background:#E2E8F0}
+.art-news .ln.s{width:60%}
+.art-news .cols{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.art-news .cols i{border-radius:3px;background:#E2E8F0}
+.art-web{aspect-ratio:4/3;background:#EEF0FF;padding:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.art-web .t{background:#fff;border-radius:8px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 6px 16px -10px rgba(15,23,42,.3)}
+.art-web .t b{height:42%;display:flex;align-items:flex-end;padding:6px;color:#fff;font:700 8px var(--text);letter-spacing:.08em}
+.art-web .t:nth-child(1) b{background:#0E6B4A}.art-web .t:nth-child(2) b{background:#21759B}.art-web .t:nth-child(3) b{background:#6B4A2F}
+.art-web .t span{margin:8px 6px 0;height:4px;border-radius:2px;background:#E2E8F0}
+.art-web .t span:nth-of-type(2){width:60%}
+.art-web .t em{margin:auto 6px 8px;height:10px;width:50%;border-radius:999px;background:var(--grad)}
+.art-trio{aspect-ratio:16/10;display:grid;grid-template-columns:1.2fr 1fr;grid-template-rows:1fr 1fr;gap:10px;padding:14px;background:#1E1B3A}
+.art-trio div{border-radius:10px;padding:12px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;line-height:.95}
+.art-trio small{font:600 8px var(--text);letter-spacing:.14em;opacity:.8;margin-bottom:5px}
+.art-trio .b1{grid-row:span 2;background:radial-gradient(circle at 75% 25%,#FF8BD1 0 12%,transparent 13%),linear-gradient(160deg,#3A1C8F,#B62E9E 70%,#FF9A5A);font:700 clamp(18px,3vw,28px)/.95 var(--head)}
+.art-trio .b2{background:linear-gradient(135deg,#0E0E12,#2A2418);color:#E8C77A;font:500 clamp(12px,1.8vw,17px)/1 var(--head);letter-spacing:.14em;border:1px solid #6B5A33}
+.art-trio .b3{background:linear-gradient(120deg,#FF4E1A,#FFB21A);font:700 clamp(13px,2vw,19px)/1 var(--head);font-style:italic}
+.art-carousel{aspect-ratio:16/10;background:#EEF0FF;display:grid;place-items:center}
+.art-carousel .deck{position:relative;width:46%;aspect-ratio:1}
+.art-carousel .s{position:absolute;inset:0;border-radius:10px;box-shadow:0 12px 24px -12px rgba(15,23,42,.45)}
+.art-carousel .s3{transform:translate(28%,-4%) rotate(7deg);background:#312E81}
+.art-carousel .s2{transform:translate(14%,-2%) rotate(3.5deg);background:#fff;border:1px solid var(--line)}
+.art-carousel .s1{background:#0F172A;color:#fff;padding:9%;display:flex;flex-direction:column;justify-content:space-between}
+.art-carousel .s1 small{font:600 8px var(--text);letter-spacing:.14em;color:#A5B4FC}
+.art-carousel .s1 strong{font:600 clamp(11px,1.6vw,15px)/1.15 var(--head)}
+.art-carousel .s1 strong span{color:#F9A8D4}
+.art-carousel .s1 i{font:500 8px var(--text);font-style:normal;opacity:.6;text-align:right}
+
+/* work */
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.work{overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.work:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.work .body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:12px;flex:1}
+.work .top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.work h3{font-size:20px}
+.work .kind{font-size:13px;font-weight:600;white-space:nowrap}
+.work p{margin:0;color:var(--body);font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-size:13px;padding:5px 10px;border-radius:999px;background:var(--bg-alt);color:#334155}
+.more{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:15px;color:var(--indigo);margin-top:auto}
+.more:hover{gap:10px}
+.more svg{width:16px;height:16px;transition:transform .2s}
+.linkrow{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:auto}
+
+/* Violations IQ wide card */
+.work.wide{grid-column:1/-1;flex-direction:row}
+.work.wide .viq{flex:1.25;min-width:0}
+.work.wide .body{flex:1;justify-content:center;padding:28px}
+.viq{background:#EEF2F8;padding:18px;display:flex}
+.viq .win{flex:1;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 14px 34px -18px rgba(10,19,51,.45);display:flex;flex-direction:column;font-family:"Manrope",var(--text)}
+.viq .bar{background:#0A1333;color:#fff;font-size:10px;font-weight:600;text-align:center;padding:6px 8px}
+.viq .bar span{color:#4DB3FF}
+.viq .nav{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid #E6EAF2;font-size:10px;color:#334155}
+.viq .brand{display:flex;align-items:center;gap:6px;font-weight:800;color:#0A1333;font-size:11px}
+.viq .brand i{width:14px;height:14px;background:linear-gradient(135deg,#4DB3FF,#1E7FE0);clip-path:polygon(30% 0,100% 0,70% 50%,100% 50%,0 100%,30% 50%,0 50%);display:block}
+.viq .nav b{background:#0A1333;color:#fff;border-radius:999px;padding:5px 10px;font-weight:700}
+.viq .hero{flex:1;padding:22px 16px 20px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;background-color:#F6F8FC;background-image:linear-gradient(#E6EBF3 1px,transparent 1px),linear-gradient(90deg,#E6EBF3 1px,transparent 1px);background-size:22px 22px}
+.viq .eb{font-size:9px;font-weight:800;letter-spacing:.14em;color:#1E88E5}
+.viq h4{margin:0;font-family:"Manrope",var(--text);font-weight:800;color:#0A1333;font-size:clamp(17px,2.2vw,24px);line-height:1.08;letter-spacing:-.02em;max-width:16em}
+.viq p{margin:0;font-size:10.5px;color:#475569;max-width:30em;line-height:1.5}
+.viq .btns{display:flex;gap:8px}
+.viq .btns span{font-size:10px;font-weight:700;padding:8px 14px;border-radius:999px;background:#0A1333;color:#fff}
+.viq .btns span+span{background:#fff;color:#0A1333;border:1px solid #D5DCE8}
+.viq .tag{font-size:9px;font-weight:700;color:#1565C0;background:#E3F1FD;border:1px solid #BBDEFB;border-radius:999px;padding:4px 10px}
+@media (max-width:760px){.work.wide{flex-direction:column}.viq .nav > span:nth-child(2){display:none}.work.wide .top{flex-wrap:wrap}}
+.feature{margin-top:28px;padding:36px;text-align:center;box-shadow:var(--shadow);border:0;display:flex;flex-direction:column;align-items:center;gap:12px}
+.feature h3{font-size:24px}
+.feature p{margin:0 0 6px;color:var(--body);max-width:32em}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:24px;align-items:stretch}
+.about-photo{margin:0;overflow:hidden;border-radius:24px;background:#E9EDF5;box-shadow:var(--shadow);min-height:100%}
+.about-photo img{display:block;width:100%;height:100%;object-fit:cover}
+.about-portrait img{object-position:center center}
+.about-side{display:flex;flex-direction:column;gap:24px}
+.about-copy{padding:32px;display:flex;flex-direction:column;justify-content:center;gap:16px}
+.about-copy h3{font-size:clamp(26px,3.2vw,36px);line-height:1.08}
+.about-copy p{margin:0;color:var(--body);font-size:16px}
+.about-copy .chips{margin-top:2px}
+.about-process{aspect-ratio:16/9;min-height:0}
+.about-process img{object-position:center center}
+
+/* capabilities */
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.cap{padding:26px 18px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px}
+.cap svg{width:24px;height:24px}
+.cap b{font-family:var(--head);font-size:16px;margin-top:6px}
+.cap span{font-size:14px;color:var(--body)}
+
+/* experience */
+.role{padding:26px 24px;display:flex;flex-direction:column;gap:14px;position:relative}
+.role.hl{border:2px solid var(--indigo);box-shadow:0 20px 40px -24px rgba(99,102,241,.6)}
+.role.hl::before{content:"";position:absolute;inset:-2px -2px auto;height:5px;border-radius:24px 24px 0 0;background:var(--grad)}
+.role h3{font-size:19px}
+.role .org{font-size:14px;color:var(--soft);margin-top:-8px}
+.role .span{font:700 22px var(--head)}
+.role ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:14px;color:#334155;flex:1}
+.role li{display:flex;gap:10px;align-items:flex-start}
+.role li svg{width:18px;height:18px;flex-shrink:0;margin-top:2px}
+.edu{text-align:center;margin-top:36px;color:var(--body);display:flex;flex-direction:column;align-items:center;gap:12px}
+
+/* live */
+.live{overflow:hidden}
+.live .shot{position:relative;aspect-ratio:16/9}
+.live .shot > .scene{height:100%}
+.live .shot .cap2{position:absolute;inset:auto 0 0 0;padding:40px 16px 14px;background:linear-gradient(to top,rgba(15,23,42,.85),transparent);color:#fff}
+.live .shot .cap2 b{display:block;font:700 22px var(--head)}
+.live .shot .cap2 span{font-size:13px;opacity:.9}
+.live .meta{padding:16px 20px 20px;display:flex;flex-direction:column;gap:12px}
+.live .meta .row{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:15px;color:#334155}
+.live .meta .row span{display:flex;align-items:center;gap:8px}
+.scene{height:100%;position:relative;overflow:hidden}
+.scene.sl{background:#E8EBFF}
+.scene.ug{background:linear-gradient(180deg,#0E6B4A 0 55%,#F1F5F9 55%)}
+.scene.wx{background:#DDEAF6}
+.scene.sh{background:#F3E7DA}
+.scene i{position:absolute;display:block;border-radius:8px}
+
+/* cta */
+.cta{position:relative;overflow:hidden;background:var(--navy);color:#fff;padding-block:88px;text-align:center}
+.cta .blob.a{left:18%;top:-40px;width:420px;height:420px;background:rgba(99,102,241,.22)}
+.cta .blob.b{right:10%;left:auto;top:auto;bottom:-120px;width:380px;height:380px;background:rgba(236,72,153,.2)}
+.cta .wrap{position:relative;display:flex;flex-direction:column;align-items:center;gap:18px}
+.cta h2{font-size:clamp(32px,4.6vw,46px);line-height:1.1;max-width:15em}
+.cta p{margin:0;color:#CBD5E1;font-size:17px;max-width:32em}
+.cta .pill{background:rgba(99,102,241,.2);color:#A5B4FC}
+.cta .btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:10px}
+.btn.darkglass{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.2)}
+.btn.darkglass:hover{background:rgba(255,255,255,.14)}
+.checks{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:center;margin-top:18px;color:#CBD5E1;font-size:15px}
+.checks span{display:flex;align-items:center;gap:8px}
+.mailbox{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;margin-top:6px;font-size:16px;color:#E2E8F0}
+.copy{font:600 13px var(--text);background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:8px;padding:6px 10px;cursor:pointer}
+.copy:hover{background:rgba(255,255,255,.1)}
+
+/* footer */
+footer{padding-block:56px 40px;background:var(--bg)}
+footer .grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:32px}
+footer p{margin:12px 0 0;color:var(--body);font-size:14px;max-width:22em}
+footer h4{margin:0 0 12px;font:600 15px var(--head)}
+footer .col a,footer .col span{display:block;font-size:14px;color:var(--body);margin-bottom:9px}
+footer .col a:hover{color:var(--indigo)}
+footer .base{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+
+/* real work images */
+.shot-img{display:block;width:100%;height:100%;object-fit:cover}
+.htile{border-radius:18px;overflow:hidden;box-shadow:var(--shadow);background:#111}
+.htile img{display:block;width:100%;height:auto}
+.hero .col.shift .htile{aspect-ratio:16/9}
+.hero .col.shift .htile img{height:100%;object-fit:cover;object-position:top center}
+.casino-gallery{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(220px,.82fr);grid-template-rows:1fr 1fr;gap:12px;padding:12px;background:#141225;aspect-ratio:16/9}
+.mockup-btn{all:unset;display:block;position:relative;overflow:hidden;cursor:zoom-in;background:#0B1224;border-radius:12px;box-shadow:0 12px 24px -16px rgba(0,0,0,.7)}
+.mockup-btn:focus-visible{outline:3px solid var(--indigo);outline-offset:3px}
+.mockup-btn.wide{grid-column:1;min-height:0}
+.mockup-btn.wide img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .4s}
+.mockup-btn.tall{grid-column:2;grid-row:1 / span 2;min-height:0}
+.mockup-btn.tall img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;background:#173022;transition:transform .4s}
+.mockup-btn:hover img{transform:scale(1.02)}
+.openbtn{all:unset;cursor:zoom-in;display:block;position:relative}
+.openbtn:focus-visible{outline:3px solid var(--indigo);outline-offset:3px;border-radius:12px}
+/* assets gallery */
+.filters{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:-20px 0 32px}
+.filters button{font:600 14px var(--text);padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--body);cursor:pointer;min-height:40px}
+.filters button[aria-pressed="true"]{background:var(--grad);color:#fff;border-color:transparent}
+.agrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.asset{overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.asset:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.asset .thumb{aspect-ratio:16/9;background:#141225;overflow:hidden}
+.asset .thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.asset:hover .thumb img{transform:scale(1.04)}
+.asset .body{padding:18px 20px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.asset .cat{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.asset h3{font-size:18px}
+.asset p{margin:0;font-size:14px;color:var(--body)}
+.asset.text .thumb{display:grid;place-items:center;background:var(--bg-alt)}
+.asset.text .thumb svg{width:40px;height:40px}
+.asset.wide{grid-column:1/-1}
+.lb[hidden]{display:none}
+.asset.wide .thumb{aspect-ratio:auto;height:100%;min-height:220px}
+.asset.wide{flex-direction:row}
+.asset.wide .thumb{flex:1.2;max-height:360px}
+.asset.wide .body{flex:1;justify-content:center}
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:50;background:rgba(11,18,36,.88);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:calc(20px + env(safe-area-inset-top,0px)) 20px calc(20px + env(safe-area-inset-bottom,0px))}
+.lb figure{margin:0;max-width:min(1100px,100%);display:flex;flex-direction:column;gap:12px}
+.lb img{max-width:100%;max-height:72vh;border-radius:14px;display:block;margin:0 auto;box-shadow:0 30px 80px -20px rgba(0,0,0,.6)}
+.lb figcaption{color:#E2E8F0;text-align:center;font-size:15px}
+.lb figcaption b{font-family:var(--head);color:#fff;font-size:18px;display:block}
+.lb .ctrl{display:flex;gap:10px}
+.lb button{font:600 14px var(--text);min-height:44px;padding:0 18px;border-radius:12px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;cursor:pointer}
+.lb button:hover{background:rgba(255,255,255,.16)}
+.lb .x{position:absolute;top:calc(16px + env(safe-area-inset-top,0px));right:16px}
+@media (max-width:900px){.agrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.agrid{grid-template-columns:1fr}.asset.wide{grid-column:auto;flex-direction:column}.asset.wide .thumb{aspect-ratio:16/9;min-height:0}}
+@media (max-width:700px){.casino-gallery{grid-template-columns:1fr;grid-template-rows:auto;aspect-ratio:auto}.mockup-btn.wide,.mockup-btn.tall{grid-column:1;grid-row:auto;aspect-ratio:16/9}.mockup-btn.tall img{object-fit:cover}}
+@media (max-width:900px){
+  .grid4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  footer .grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:700px){
+  nav.links{display:none}
+  .grid2{grid-template-columns:1fr}
+  .sec{padding-block:64px}
+}
+@media (max-width:420px){
+  .grid4{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;scroll-behavior:auto!important}
+  .hero::before,.hero .pill,.hero h1,.hero .lede,.hero .ctas,.hero .stats,.hero .blob{animation:none!important;opacity:1;transform:none}
+}
+</style>
+<style>[hidden]{display:none!important}img{max-width:100%}</style>
 </head>
 <body>
-<header class="site-header"><div class="container nav-wrap"><a class="logo" href="index.html"><span>Kristine</span> Estuaria</a><button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false">Menu</button><nav class="site-nav" id="site-nav">
-      <a class="active" href="index.html">Home</a>
-      <div class="nav-item has-dropdown">
-        <a href="projects.html">Projects</a>
-        <div class="dropdown">
-          <a href="sliceo.html">Sliceo</a>
-          <a href="unified-global.html">Unified Global</a>
-          <a href="landing-pages.html">Landing Pages</a>
-          <a href="others.html">Digital Assets</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6366F1"/><stop offset="1" stop-color="#EC4899"/></linearGradient>
+    <symbol id="check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#10B981"/><path d="M7 12.5l3.2 3L17 9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="ext" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Kristine Estuaria"><img class="logo-mark" src="assets/b-pixel-mark.svg" alt="KE"></a>
+    <nav class="links">
+      <a href="#work">Work</a>
+      <a href="#assets">Assets</a>
+      <a href="#design">Services</a>
+      <a href="#experience">Experience</a>
+      <a href="#live">Live Projects</a>
+    </nav>
+    <a class="btn primary" href="#contact">Hire Me</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="blob a"></div><div class="blob b"></div>
+    <div class="wrap">
+      <div>
+        <span class="pill indigo">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.3 7 1-5 4.8 1.2 6.9L12 17.8 5.8 21l1.2-6.9-5-4.8 7-1z"/></svg>
+          Open to graphic design roles
+        </span>
+        <h1>Campaign design for<br><span class="grad-text">casino brands</span></h1>
+        <p class="lede">I'm Kristine, a graphic and digital designer with 11 years in iGaming. I create banners, promo assets, email visuals, landing page graphics, and social content, adapting each piece for the brand, market, and placement.</p>
+        <div class="ctas">
+          <a class="btn primary" href="#work">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+            View My Work
+          </a>
+          <a class="btn outline" href="#contact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+            Contact Me
+          </a>
+        </div>
+        <div class="stats">
+          <div><b class="grad-text stat-value" data-count="3">3</b><span>Casino brands</span></div>
+          <div><b class="grad-text stat-value" data-count="11">11</b><span>Years in iGaming</span></div>
+          <div><b class="grad-text stat-value" data-count="5">5</b><span>Web platforms</span></div>
         </div>
       </div>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav></div></header>
-<main>
-<section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <p class="eyebrow">Web Designer / Developer</p>
-      <h1>Designing clean, fast websites that feel premium and convert.</h1>
-      <p class="lede">I create responsive websites, landing pages, campaign visuals, and email designs that balance visual polish, usability, and practical front-end implementation.</p>
-      <div class="hero-actions"><a class="btn primary" href="projects.html">View Selected Work</a><a class="btn secondary" href="contact.html">Contact Me</a></div>
+
     </div>
-    <div class="hero-card portfolio-preview">
-      <span class="preview-kicker">Portfolio Focus</span>
-      <div class="preview-lines"><span></span><span></span><span></span></div>
-      <h2>Websites, landing pages, newsletters, and brand-forward digital layouts.</h2>
-      <div class="mini-metrics"><div><strong>9+ yrs</strong><span>web/front-end</span></div><div><strong>4</strong><span>core work areas</span></div></div>
+  </section>
+
+  <!-- WORK -->
+  <section class="sec alt" id="work">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="pill indigo">Selected Work</span>
+        <h2>Casino campaigns and <span class="grad-text">brand systems</span></h2>
+        <p>Promo graphics, email, social content, and web layouts built across multiple casino brands and client teams.</p>
+      </div>
+      <div class="grid2">
+        <article class="card work">
+          <div class="casino-gallery">
+            <button class="mockup-btn wide" type="button" data-open="slotbunny" aria-label="Open the SlotBunny casino mockup"><img src="assets/slotbunny-mockup.png" alt="SlotBunny casino lobby and promotions mockup" loading="lazy"></button>
+            <button class="mockup-btn tall" type="button" data-open="ritzslots" aria-label="Open the RitzSlots casino mockup"><img src="assets/ritzslots-mockup.png" alt="RitzSlots casino homepage and promotions mockup" loading="lazy"></button>
+            <button class="mockup-btn wide" type="button" data-open="slotzania" aria-label="Open the Slotzania casino mockup"><img src="assets/slotzania-mockup.png" alt="Slotzania casino promotions mockup" loading="lazy"></button>
+          </div>
+          <div class="body">
+            <div class="top"><h3>Casino Brand Promotions</h3><span class="kind grad-text">iGaming</span></div>
+            <p>Three casino brands, three visual directions. Homepage promotions, bonus offers, and campaign layouts shaped to feel distinct while staying ready for production.</p>
+            <div class="chips"><span>Multi-brand design</span><span>Promotions</span><span>UI mockups</span></div>
+            <a class="more" href="#assets">See More Work <svg><use href="#arrow"/></svg></a>
+          </div>
+        </article>
+
+        <article class="card work">
+          <div class="art-carousel" aria-hidden="true">
+            <div class="deck"><div class="s s3"></div><div class="s s2"></div><div class="s s1"><small>OPERATIONS</small><strong>Your board sees the <span>outcome</span>.</strong><i>1 / 6</i></div></div>
+          </div>
+          <div class="body">
+            <div class="top"><h3>Sliceo Brand &amp; Campaigns</h3><span class="kind grad-text">Consulting</span></div>
+            <p>I built a type system for a PropTech consulting firm and applied it across LinkedIn carousels, before-and-after graphics, sales decks, newsletters, and the website.</p>
+            <div class="chips"><span>LinkedIn carousels</span><span>Sales decks</span><span>Figma</span></div>
+            <a class="more" href="https://www.linkedin.com/company/sliceo/" target="_blank" rel="noopener">View Campaigns <svg><use href="#arrow"/></svg></a>
+          </div>
+        </article>
+
+        <article class="card work">
+          <div class="art-news" aria-hidden="true">
+            <div class="mail"><div class="mh"></div><div class="hr"></div><div class="ln"></div><div class="ln s"></div><div class="cols"><i></i><i></i></div></div>
+          </div>
+          <div class="body">
+            <div class="top"><h3>Newsletters &amp; Email</h3><span class="kind grad-text">Email Design</span></div>
+            <p>Email designs refined for real client constraints. For Bridge Accounting, I took the design through seven versions and delivered a reusable Mailchimp template.</p>
+            <div class="chips"><span>HTML email</span><span>Mailchimp</span><span>Layout</span></div>
+            <div class="linkrow">
+              <a class="more" href="https://kumiyeonssi.github.io/newsletter/perimatch_newsletter_vn.html" target="_blank" rel="noopener">Parimatch <svg><use href="#arrow"/></svg></a>
+              <a class="more" href="https://designs.ktinelucille.com/newsletter-issue-001.html" target="_blank" rel="noopener">Sliceo Issue 001 <svg><use href="#arrow"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card work">
+          <div class="art-web" aria-hidden="true">
+            <div class="t"><b>ACCOUNTING</b><span></span><span></span><em></em></div>
+            <div class="t"><b>SMALL BIZ</b><span></span><span></span><em></em></div>
+            <div class="t"><b>COFFEE</b><span></span><span></span><em></em></div>
+          </div>
+          <div class="body">
+            <div class="top"><h3>Web &amp; Landing Pages</h3><span class="kind grad-text">Web Layout</span></div>
+            <p>Web layouts I design and build, including the Unified Global homepage redesign and landing pages made in WordPress, Wix, and Shopify.</p>
+            <div class="chips"><span>WordPress</span><span>Wix Studio</span><span>Shopify</span></div>
+            <a class="more" href="#live">See Live Projects <svg><use href="#arrow"/></svg></a>
+          </div>
+        </article>
+        <article class="card work wide">
+          <div class="viq" aria-hidden="true">
+            <div class="win">
+              <div class="bar">Violations IQ closed beta is now accepting applications from CINC Systems users · <span>Request Free Trial →</span></div>
+              <div class="nav"><span class="brand"><i></i>Violations IQ</span><span>How it works · Why Violations IQ · Trust</span><b>Request Free Trial</b></div>
+              <div class="hero">
+                <span class="eb">● VIOLATIONS IQ · CLOSED BETA</span>
+                <h4>Turn HOA governing documents into a CINC-ready violation catalog.</h4>
+                <p>CC&amp;Rs, bylaws and fine schedules turned into a human-reviewed violation catalog, pushed straight into CINC.</p>
+                <div class="btns"><span>Request Free Trial</span><span>See it in action</span></div>
+                <span class="tag">For CINC Systems Users Only · Limited Beta Access</span>
+              </div>
+            </div>
+          </div>
+          <div class="body">
+            <div class="top"><h3>Violations IQ</h3><span class="kind grad-text">Sliceo · Product Launch</span></div>
+            <p>A beta landing page for Sliceo's Violations IQ. It turns HOA governing documents into CINC-ready violation catalogs and translates a technical, AI-assisted workflow into one clear action: requesting a free trial.</p>
+            <div class="chips"><span>Landing page</span><span>B2B SaaS</span><span>Sliceo brand</span><span>Conversion</span></div>
+            <a class="more" href="https://violationsiq-beta.sliceo.co/" target="_blank" rel="noopener">View Live Page <svg><use href="#ext"/></svg></a>
+          </div>
+        </article>
+      </div>
+
     </div>
-  </div>
-</section>
-<section class="section"><div class="container"><div class="section-header"><p class="eyebrow">Selected Work</p><h2>Portfolio highlights</h2><p>A curated mix of client work and personal explorations across websites, marketing design, landing pages, and newsletters.</p></div>
-<div class="project-grid">
-  <article class="project-card featured"><div class="project-thumb navy"><span>Sliceo</span></div><div class="project-body"><p class="project-type">Consulting brand / web design</p><h3>Sliceo</h3><p>Website direction, LinkedIn campaign visuals, and operational storytelling for a PropTech consulting brand.</p><a href="sliceo.html">View case study →</a></div></article>
-  <article class="project-card"><div class="project-thumb green"><span>Unified Global</span></div><div class="project-body"><p class="project-type">Website redesign / WordPress</p><h3>Unified Global Solutions</h3><p>Website redesign, migration support, responsive QA, and UX cleanup.</p><a href="unified-global.html">View case study →</a></div></article>
-  <article class="project-card"><div class="project-thumb warm"><span>Landing Pages</span></div><div class="project-body"><p class="project-type">Personal + client samples</p><h3>Landing Pages & Web Builds</h3><p>WordPress, Wix, Shopify, and custom HTML/CSS samples with live links.</p><a href="landing-pages.html">View collection →</a></div></article>
-  <article class="project-card"><div class="project-thumb purple"><span>Digital Assets</span></div><div class="project-body"><p class="project-type">Others</p><p>Supporting creative work including branded newsletters, email campaigns, presentation decks, landing pages, and other marketing materials.</p><a href="others.html">View collection →</a></div></article>
-</div></div></section>
-<section class="section"><div class="container"><div class="cta-band"><div><p class="eyebrow">Designer application portfolio</p><h2>Built to show range without feeling scattered.</h2><p>The structure keeps Sliceo and Unified Global as the main case studies, then supports them with landing page, newsletter, and personal web design work.</p></div><a class="btn light" href="projects.html">Explore Projects</a></div></div></section>
+  </section>
+
+  <!-- DIGITAL ASSETS -->
+  <section class="sec" id="assets">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="pill indigo">Digital Assets</span>
+        <h2>Production-ready <span class="grad-text">campaign assets</span></h2>
+        <p>Email layouts, landing-page samples, and marketing materials that support the main projects.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter assets">
+        <button type="button" data-f="all" aria-pressed="true">All</button>
+        <button type="button" data-f="email" aria-pressed="false">Email</button>
+        <button type="button" data-f="more" aria-pressed="false">Web &amp; Collateral</button>
+      </div>
+      <div class="agrid">
+        <article class="card asset wide" data-k="email">
+          <div class="thumb" style="background:#0B0B0B"><img src="assets/hero_img.webp" alt="Parimatch newsletter hero: football player beside the partner app" loading="lazy" style="object-fit:contain"></div>
+          <div class="body"><span class="cat grad-text">HTML Email · Newsletter</span><h3>Parimatch Affiliate Newsletter</h3><p>Responsive newsletter for Parimatch's Vietnam affiliate program, with a dark, high-contrast brand look, clear section hierarchy and repeated partner CTAs. Coded as table-based HTML so it renders in real email clients.</p><div class="chips"><span>Email</span><span>Responsive</span><span>Localized</span></div><a class="more" href="https://kumiyeonssi.github.io/newsletter/perimatch_newsletter_vn.html" target="_blank" rel="noopener">View Newsletter <svg><use href="#ext"/></svg></a></div>
+        </article>
+        <article class="card asset text" data-k="more">
+          <div class="thumb"><svg viewBox="0 0 24 24" fill="none" stroke="url(#g)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+          <div class="body"><span class="cat grad-text">Web Design</span><h3>Landing Page Samples</h3><p>Landing page layouts and hero sections for campaigns and businesses.</p><div class="chips"><span>Landing page</span><span>Hero section</span></div></div>
+        </article>
+        <article class="card asset text" data-k="more">
+          <div class="thumb"><svg viewBox="0 0 24 24" fill="none" stroke="url(#g)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 15l5-5 4 4 3-3 6 6"/></svg></div>
+          <div class="body"><span class="cat grad-text">Marketing Assets</span><h3>Social &amp; Campaign Graphics</h3><p>Graphics for social posts, campaigns, content marketing and brand communication.</p><div class="chips"><span>Social</span><span>Campaign</span></div></div>
+        </article>
+        <article class="card asset text" data-k="more">
+          <div class="thumb"><svg viewBox="0 0 24 24" fill="none" stroke="url(#g)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+          <div class="body"><span class="cat grad-text">Collateral</span><h3>Presentation &amp; Sales Assets</h3><p>Presentation layouts, sales decks and client-facing collateral.</p><div class="chips"><span>Decks</span><span>Branding</span></div></div>
+        </article>
+      </div>
+      <div class="edu" style="margin-top:40px">
+        <a class="btn outline" href="https://kumiyeonssi.github.io/others.html" target="_blank" rel="noopener">Open the Full Digital Assets Page <svg width="16" height="16"><use href="#ext"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT I DESIGN -->
+  <section class="sec" id="design">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="pill green">Services</span>
+        <h2>Design support from concept <span class="grad-text">to delivery</span></h2>
+        <p>From one campaign asset to a full content system, ready for the channel it needs.</p>
+      </div>
+      <div class="grid4">
+        <div class="card cap"><svg viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h6M16 10v4"/></svg><b>Campaign Banners</b><span>Promotions, offers, and seasonal campaigns</span></div>
+        <div class="card cap"><svg viewBox="0 0 24 24" fill="none" stroke="#EC4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 15l5-5 4 4 3-3 6 6"/></svg><b>Social Graphics</b><span>Posts and stories sized for each platform</span></div>
+        <div class="card cap"><svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="4" width="14" height="14" rx="2"/><path d="M3 8v10a2 2 0 0 0 2 2h10"/></svg><b>LinkedIn Carousels</b><span>Multi-slide stories that make ideas clear</span></div>
+        <div class="card cap"><svg viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M22 6l-10 7L2 6"/></svg><b>Email Newsletters</b><span>Designed and coded for reliable inbox rendering</span></div>
+        <div class="card cap"><svg viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><b>Sales Decks</b><span>Presentations that keep the story moving</span></div>
+        <div class="card cap"><svg viewBox="0 0 24 24" fill="none" stroke="#EC4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg><b>Brand Type Systems</b><span>Type choices and hierarchy that stay consistent</span></div>
+        <div class="card cap"><svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg><b>Email Signatures</b><span>Small brand touchpoints, kept consistent</span></div>
+        <div class="card cap"><svg viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg><b>Web Layouts</b><span>Landing pages and site sections that convert</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="sec alt" id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="pill indigo">Behind the work</span>
+        <h2>A designer who stays close to the <span class="grad-text">details</span></h2>
+        <p>A little context on the person behind the campaign assets.</p>
+      </div>
+      <div class="about-grid">
+        <figure class="about-photo about-portrait">
+          <img src="assets/kristine-portrait-editorial.png" alt="Editorial portrait-style image of a graphic designer working in a home studio" loading="lazy" width="1024" height="1536">
+        </figure>
+        <div class="about-side">
+          <div class="card about-copy">
+            <h3>Design that can move from brief to finished asset.</h3>
+            <p>I work across campaign design, brand systems, email, and web, keeping the visual details connected from the first idea to the final export.</p>
+            <p>My background in iGaming means I understand fast-moving promotions, multiple brand identities, localized content, and the production discipline behind a busy creative calendar.</p>
+            <div class="chips"><span>11 years in iGaming</span><span>Metro Manila</span><span>Design + web</span></div>
+          </div>
+          <figure class="about-photo about-process">
+            <img src="assets/designer-workspace-process.png" alt="Graphic designer workspace with layout studies, color swatches, and a monitor showing abstract design studies" loading="lazy" width="1536" height="1024">
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="sec alt" id="experience">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="pill indigo">Experience</span>
+        <h2>Experience across design, <span class="grad-text">marketing, and web</span></h2>
+        <p>11 years in iGaming, plus freelance work across brand, campaign, email, and web design.</p>
+      </div>
+      <div class="grid4">
+        <div class="card role">
+          <h3>iGaming Platform Supervisor</h3>
+          <div class="org">Core-x Design Inc. / M88</div>
+          <div class="span grad-text">11 years</div>
+          <ul>
+            <li><svg><use href="#check"/></svg>Casino promo banners</li>
+            <li><svg><use href="#check"/></svg>Multi-brand campaign assets</li>
+            <li><svg><use href="#check"/></svg>Localized content</li>
+            <li><svg><use href="#check"/></svg>Design and marketing link</li>
+          </ul>
+        </div>
+        <div class="card role">
+          <h3>Project-Based Designer</h3>
+          <div class="org">Independent clients</div>
+          <div class="span grad-text">Freelance</div>
+          <ul>
+            <li><svg><use href="#check"/></svg>Brand-led web layouts</li>
+            <li><svg><use href="#check"/></svg>Landing pages</li>
+            <li><svg><use href="#check"/></svg>Site redesigns</li>
+            <li><svg><use href="#check"/></svg>Weebly &amp; Wix builds</li>
+          </ul>
+        </div>
+        <div class="card role">
+          <h3>Web Designer &amp; Marketing Specialist</h3>
+          <div class="org">Sliceo</div>
+          <div class="span grad-text">Freelance</div>
+          <ul>
+            <li><svg><use href="#check"/></svg>Brand type system</li>
+            <li><svg><use href="#check"/></svg>LinkedIn carousels</li>
+            <li><svg><use href="#check"/></svg>Sales decks</li>
+            <li><svg><use href="#check"/></svg>Newsletter &amp; signature</li>
+            <li><svg><use href="#check"/></svg>Website design</li>
+            <li><svg><use href="#check"/></svg>Violations IQ beta page</li>
+          </ul>
+          <a class="btn soft" href="https://www.sliceo.co/" target="_blank" rel="noopener">Visit Sliceo</a>
+        </div>
+        <div class="card role hl">
+          <span class="pill indigo" style="align-self:flex-start">Current</span>
+          <h3>Web Developer &amp; Digital Marketing Specialist</h3>
+          <div class="org">Unified Global</div>
+          <ul>
+            <li><svg><use href="#check"/></svg>Homepage redesign</li>
+            <li><svg><use href="#check"/></svg>Newsletter design</li>
+            <li><svg><use href="#check"/></svg>HTML email templates</li>
+            <li><svg><use href="#check"/></svg>Site and SEO upkeep</li>
+          </ul>
+          <a class="btn primary" href="https://unifiedgroupsolutions.com/" target="_blank" rel="noopener">Visit Site</a>
+        </div>
+      </div>
+      <div class="edu">
+        <span>B.S. Information Technology · University of the East, 2014</span>
+        <a class="btn outline" href="https://www.linkedin.com/in/kristine-lucille/" target="_blank" rel="noopener">Full Profile on LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE PROJECTS -->
+  <section class="sec" id="live">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="pill indigo">Live Projects</span>
+        <h2>See It <span class="grad-text">Live</span></h2>
+        <p>Real sites you can open right now, designed and built across different platforms.</p>
+      </div>
+      <div class="grid2">
+        <article class="card live">
+          <div class="shot"><div class="scene sl" aria-hidden="true"><i style="left:8%;top:14%;width:22%;height:8px;background:#0F172A"></i><i style="left:8%;top:30%;width:58%;height:18px;background:#312E81"></i><i style="left:8%;top:42%;width:40%;height:18px;background:#6366F1"></i><i style="left:8%;top:58%;width:18%;height:18px;border-radius:999px;background:#6366F1"></i></div>
+            <div class="cap2"><b>Sliceo</b><span>sliceo.co · Wix Studio</span></div></div>
+          <div class="meta">
+            <div class="row"><span>Consulting website</span><a class="more" href="https://www.sliceo.co/" target="_blank" rel="noopener">View Site <svg><use href="#ext"/></svg></a></div>
+            <div class="chips"><span>Figma to Wix</span><span>Type system</span><span>Responsive</span></div>
+          </div>
+        </article>
+        <article class="card live">
+          <div class="shot"><div class="scene ug" aria-hidden="true"><i style="left:8%;top:12%;width:20%;height:8px;background:#fff"></i><i style="right:8%;top:10%;width:14%;height:14px;background:#fff"></i><i style="left:8%;top:28%;width:52%;height:16px;background:rgba(255,255,255,.9)"></i><i style="left:8%;top:62%;width:19%;height:26%;background:#fff"></i><i style="left:30%;top:62%;width:19%;height:26%;background:#fff"></i><i style="left:52%;top:62%;width:19%;height:26%;background:#fff"></i><i style="left:74%;top:62%;width:18%;height:26%;background:#fff"></i></div>
+            <div class="cap2"><b>Unified Global</b><span>unifiedgroupsolutions.com · WordPress</span></div></div>
+          <div class="meta">
+            <div class="row"><span>Accounting firm redesign</span><a class="more" href="https://unifiedgroupsolutions.com/" target="_blank" rel="noopener">View Site <svg><use href="#ext"/></svg></a></div>
+            <div class="chips"><span>Homepage redesign</span><span>Custom theme</span><span>Migration QA</span></div>
+          </div>
+        </article>
+        <article class="card live">
+          <div class="shot"><div class="scene wx" aria-hidden="true"><i style="left:8%;top:12%;width:84%;height:10px;background:#21759B"></i><i style="left:8%;top:30%;width:44%;height:40%;background:#fff"></i><i style="left:56%;top:30%;width:36%;height:18%;background:#fff"></i><i style="left:56%;top:52%;width:36%;height:18%;background:#fff"></i></div>
+            <div class="cap2"><b>Small Business Site</b><span>Wix · multi-section</span></div></div>
+          <div class="meta">
+            <div class="row"><span>Marketing site</span><a class="more" href="https://kristineestuaria.wixstudio.com/mydemosite-1" target="_blank" rel="noopener">View Site <svg><use href="#ext"/></svg></a></div>
+            <div class="chips"><span>Wix</span><span>UI polish</span><span>SEO basics</span></div>
+          </div>
+        </article>
+        <article class="card live">
+          <div class="shot"><div class="scene sh" aria-hidden="true"><i style="left:8%;top:12%;width:24%;height:10px;background:#6B4A2F"></i><i style="left:8%;top:30%;width:26%;height:44%;background:#fff"></i><i style="left:37%;top:30%;width:26%;height:44%;background:#fff"></i><i style="left:66%;top:30%;width:26%;height:44%;background:#fff"></i></div>
+            <div class="cap2"><b>Brew Biz Coffee</b><span>Shopify · e-commerce</span></div></div>
+          <div class="meta">
+            <div class="row"><span>Online store</span><a class="more" href="https://brew-biz-coffee.myshopify.com/" target="_blank" rel="noopener">View Store <svg><use href="#ext"/></svg></a></div>
+            <div class="chips"><span>Theme edits</span><span>Product pages</span><span>Mobile-first</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="contact">
+    <div class="blob a"></div><div class="blob b"></div>
+    <div class="wrap">
+      <span class="pill">Let's Talk</span>
+      <h2>Need a designer who can keep <span class="grad-text">multiple brands moving?</span></h2>
+      <p>I'm looking for a full-time graphic design role where I can turn briefs into reliable, on-brand campaign assets across banners, email, landing pages, and social.</p>
+      <div class="mailbox"><span id="email">kristine.estuaria@gmail.com</span><button class="copy" id="copyBtn" type="button">Copy email</button></div>
+      <div class="btns">
+        <a class="btn primary" href="mailto:kristine.estuaria@gmail.com">Email Me</a>
+        <a class="btn darkglass" href="https://www.linkedin.com/in/kristine-lucille/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+      </div>
+      <div class="checks">
+        <span><svg width="18" height="18"><use href="#check"/></svg>Fully remote</span>
+        <span><svg width="18" height="18"><use href="#check"/></svg>Metro Manila · UTC+8</span>
+        <span><svg width="18" height="18"><use href="#check"/></svg>Figma &amp; Photoshop</span>
+      </div>
+    </div>
+  </section>
 </main>
-<footer class="site-footer"><div class="container footer-wrap"><span>© 2026 Kristine Estuaria</span><span>Web Designer • UI/UX • Front-End</span></div></footer>
-<script>const navToggle=document.querySelector('.nav-toggle');const siteNav=document.querySelector('.site-nav');if(navToggle&&siteNav){navToggle.addEventListener('click',()=>{const isOpen=siteNav.classList.toggle('open');navToggle.setAttribute('aria-expanded',String(isOpen));});siteNav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{siteNav.classList.remove('open');navToggle.setAttribute('aria-expanded','false');}));window.addEventListener('resize',()=>{if(window.innerWidth>860){siteNav.classList.remove('open');navToggle.setAttribute('aria-expanded','false');}});}</script>
+
+<footer>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <a class="logo" href="#top" aria-label="Kristine Estuaria"><img class="logo-mark" src="assets/b-pixel-mark.svg" alt="KE"></a>
+        <p>Graphic and digital designer focused on casino campaigns, brand systems, email, and web layouts.</p>
+      </div>
+      <div class="col">
+        <h4>Work</h4>
+        <a href="#work">Selected Work</a>
+        <a href="#assets">Digital Assets</a>
+        <a href="#live">Live Projects</a>
+      </div>
+      <div class="col">
+        <h4>About</h4>
+        <a href="#about">About Kristine</a>
+        <a href="#design">Services</a>
+        <a href="#experience">Experience</a>
+        <a href="https://designs.ktinelucille.com/" target="_blank" rel="noopener">More Samples</a>
+      </div>
+      <div class="col">
+        <h4>Contact</h4>
+        <span>kristine.estuaria@gmail.com</span>
+        <a href="https://www.linkedin.com/in/kristine-lucille/" target="_blank" rel="noopener">LinkedIn</a>
+        <span>Metro Manila, PH</span>
+      </div>
+    </div>
+    <div class="base"><span>© 2026 Kristine Estuaria</span><span>Graphic &amp; Digital Designer</span></div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Mockup viewer">
+  <button class="x" type="button" id="lbClose">Close</button>
+  <figure><img id="lbImg" src="" alt=""><figcaption id="lbCap"></figcaption></figure>
+  <div class="ctrl"><button type="button" id="lbPrev">← Previous</button><button type="button" id="lbNext">Next →</button></div>
+</div>
+
+<script>
+(function(){
+  var sets={
+    slotbunny:[['slotbunny-mockup.png','SlotBunny','Casino lobby and promotions mockup']],
+    ritzslots:[['ritzslots-mockup.png','RitzSlots','Casino homepage and promotions mockup']],
+    slotzania:[['slotzania-mockup.png','Slotzania','Casino promotions mockup']]
+  };
+  var lb=document.getElementById('lb'),img=document.getElementById('lbImg'),cap=document.getElementById('lbCap'),prev=document.getElementById('lbPrev'),next=document.getElementById('lbNext'),list=[],i=0,last=null;
+  function show(){var it=list[i];img.src='assets/'+it[0];img.alt=it[1]+' mockup: '+it[2];cap.innerHTML='';var b=document.createElement('b');b.textContent=it[1];cap.appendChild(b);cap.appendChild(document.createTextNode(it[2]+' · '+(i+1)+' of '+list.length));prev.hidden=next.hidden=list.length<2;}
+  function open(k,btn){list=sets[k]||[];i=0;last=btn;show();lb.hidden=false;document.getElementById('lbClose').focus();}
+  function close(){lb.hidden=true;if(last)last.focus();}
+  document.querySelectorAll('[data-open]').forEach(function(b){b.addEventListener('click',function(){open(b.getAttribute('data-open'),b);});});
+  document.getElementById('lbClose').addEventListener('click',close);
+  document.getElementById('lbPrev').addEventListener('click',function(){i=(i-1+list.length)%list.length;show();});
+  document.getElementById('lbNext').addEventListener('click',function(){i=(i+1)%list.length;show();});
+  lb.addEventListener('click',function(e){if(e.target===lb)close();});
+  lb.addEventListener('keydown',function(e){if(e.key==='Escape')close();if(e.key==='ArrowRight')document.getElementById('lbNext').click();if(e.key==='ArrowLeft')document.getElementById('lbPrev').click();});
+  var fb=document.querySelectorAll('.filters button');
+  fb.forEach(function(b){b.addEventListener('click',function(){var f=b.getAttribute('data-f');fb.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});document.querySelectorAll('.asset').forEach(function(a){a.hidden=!(f==='all'||a.getAttribute('data-k')===f);});});});
+})();
+</script>
+
+<script>
+(function(){
+  var hero=document.querySelector('.hero');
+  if(!hero) return;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var finePointer=window.matchMedia('(pointer:fine)').matches;
+  if(!reduce&&finePointer){
+    hero.addEventListener('pointermove',function(e){
+      var r=hero.getBoundingClientRect();
+      hero.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');
+      hero.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');
+      hero.style.setProperty('--spotlight-opacity','1');
+    });
+    hero.addEventListener('pointerleave',function(){hero.style.setProperty('--spotlight-opacity','0')});
+    hero.querySelectorAll('.btn').forEach(function(btn){
+      btn.addEventListener('pointermove',function(e){
+        var r=btn.getBoundingClientRect(),x=((e.clientX-r.left)/r.width-.5)*6,y=((e.clientY-r.top)/r.height-.5)*6;
+        btn.style.transform='translate('+x.toFixed(1)+'px,'+y.toFixed(1)+'px)';
+      });
+      btn.addEventListener('pointerleave',function(){btn.style.transform=''});
+    });
+  }
+  if(reduce) return;
+  hero.querySelectorAll('.stat-value[data-count]').forEach(function(el){
+    var target=Number(el.getAttribute('data-count')),start=performance.now();
+    el.textContent='0';
+    function tick(now){
+      var p=Math.min((now-start)/850,1),eased=1-Math.pow(1-p,3);
+      el.textContent=String(Math.round(target*eased));
+      if(p<1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  });
+})();
+</script>
+
+<script>
+document.getElementById('copyBtn').addEventListener('click', function(){
+  var btn=this, el=document.getElementById('email');
+  function done(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy email'},1600)}
+  function fallback(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Selected'}
+  try{navigator.clipboard.writeText(el.textContent).then(done,fallback)}catch(e){fallback()}
+});
+</script>
+
 </body>
 </html>
