@@ -146,6 +146,12 @@ header .btn{min-height:40px;padding:0 18px;font-size:14px}
 
 /* work */
 .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.portfolio-index{display:grid;grid-template-columns:1fr;gap:16px}
+.index-card{padding:24px;display:flex;flex-direction:column;justify-content:center;gap:12px;transition:transform .25s,box-shadow .25s,border-color .25s}
+.index-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#C7D2FE}
+.index-card h3{font-size:22px;line-height:1.1}
+.index-card p{margin:0;color:var(--body);font-size:15px}
+.index-card .more{margin-top:auto}
 .work{overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
 .work:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
 .work .body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:12px;flex:1}
@@ -299,6 +305,11 @@ footer .base{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);f
 .asset.wide{flex-direction:row}
 .asset.wide .thumb{flex:1.2;max-height:360px}
 .asset.wide .body{flex:1;justify-content:center}
+.support-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:24px}
+.asset-note{padding:26px;display:flex;flex-direction:column;justify-content:center;gap:12px}
+.asset-note h3{font-size:24px;line-height:1.1}
+.asset-note p{margin:0;color:var(--body);font-size:15px}
+.asset-note .more{margin-top:8px}
 /* client work */
 .client-groups{display:flex;flex-direction:column;gap:44px}
 .client-group{display:flex;flex-direction:column;gap:16px}
@@ -343,6 +354,7 @@ footer .base{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);f
 .lb button:hover{background:rgba(255,255,255,.16)}
 .lb .x{position:absolute;top:calc(16px + env(safe-area-inset-top,0px));right:16px}
 @media (max-width:900px){.agrid{grid-template-columns:repeat(2,minmax(0,1fr))}.client-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:900px){.support-grid{grid-template-columns:1fr}}
 @media (max-width:640px){.agrid{grid-template-columns:1fr}.asset.wide{grid-column:auto;flex-direction:column}.asset.wide .thumb{aspect-ratio:16/9;min-height:0}}
 @media (max-width:640px){.client-grid{grid-template-columns:1fr}.client-group-head{display:block}.client-group-head p{margin-top:8px}}
 @media (max-width:700px){.client-process{grid-template-columns:1fr;padding:24px}.process-steps{grid-template-columns:repeat(2,1fr)}}
@@ -428,9 +440,9 @@ footer .base{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);f
   <section class="sec alt" id="work">
     <div class="wrap">
       <div class="sec-head">
-        <span class="pill indigo">Selected Work</span>
-        <h2>Casino campaigns and <span class="grad-text">brand systems</span></h2>
-        <p>Promo graphics, email, social content, and web layouts built across multiple casino brands and client teams.</p>
+        <span class="pill indigo">Featured Work</span>
+        <h2>A focused look at <span class="grad-text">the work</span></h2>
+        <p>One featured case study up front, with the full client archive and supporting samples organized below.</p>
       </div>
       <div class="grid2">
         <article class="card work">
@@ -443,71 +455,24 @@ footer .base{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);f
             <div class="top"><h3>Casino Brand Promotions</h3><span class="kind grad-text">iGaming</span></div>
             <p>Three casino brands, three visual directions. Homepage promotions, bonus offers, and campaign layouts shaped to feel distinct while staying ready for production.</p>
             <div class="chips"><span>Multi-brand design</span><span>Promotions</span><span>UI mockups</span></div>
-            <a class="more" href="#assets">See More Work <svg><use href="#arrow"/></svg></a>
+            <a class="more" href="#client-work">Browse Client Work <svg><use href="#arrow"/></svg></a>
           </div>
         </article>
 
-        <article class="card work">
-          <div class="art-carousel" aria-hidden="true">
-            <div class="deck"><div class="s s3"></div><div class="s s2"></div><div class="s s1"><small>OPERATIONS</small><strong>Your board sees the <span>outcome</span>.</strong><i>1 / 6</i></div></div>
-          </div>
-          <div class="body">
-            <div class="top"><h3>Sliceo Brand &amp; Campaigns</h3><span class="kind grad-text">Consulting</span></div>
-            <p>I built a type system for a PropTech consulting firm and applied it across BoardMatch, OnCall PRO, Bridge Accounting, LinkedIn campaigns, emails, and the website.</p>
-            <div class="chips"><span>LinkedIn carousels</span><span>Sales decks</span><span>Figma</span></div>
-            <a class="more" href="#client-work">See Sliceo Work <svg><use href="#arrow"/></svg></a>
-          </div>
-        </article>
-
-        <article class="card work">
-          <div class="art-news" aria-hidden="true">
-            <div class="mail"><div class="mh"></div><div class="hr"></div><div class="ln"></div><div class="ln s"></div><div class="cols"><i></i><i></i></div></div>
-          </div>
-          <div class="body">
-            <div class="top"><h3>Newsletters &amp; Email</h3><span class="kind grad-text">Email Design</span></div>
-            <p>Email designs refined for real client constraints. For Bridge Accounting, I took the design through seven versions and delivered a reusable Mailchimp template.</p>
-            <div class="chips"><span>HTML email</span><span>Mailchimp</span><span>Layout</span></div>
-            <div class="linkrow">
-              <a class="more" href="https://kumiyeonssi.github.io/newsletter/perimatch_newsletter_vn.html" target="_blank" rel="noopener">Parimatch <svg><use href="#arrow"/></svg></a>
-              <a class="more" href="https://kumiyeonssi.github.io/newsletter/newsletter-issue-001.html" target="_blank" rel="noopener">Sliceo Issue 001 <svg><use href="#arrow"/></svg></a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card work">
-          <div class="art-web" aria-hidden="true">
-            <div class="t"><b>ACCOUNTING</b><span></span><span></span><em></em></div>
-            <div class="t"><b>SMALL BIZ</b><span></span><span></span><em></em></div>
-            <div class="t"><b>COFFEE</b><span></span><span></span><em></em></div>
-          </div>
-          <div class="body">
-            <div class="top"><h3>Web &amp; Landing Pages</h3><span class="kind grad-text">Web Layout</span></div>
-            <p>Web layouts I design and build, including the Unified Global homepage redesign and landing pages made in WordPress, Wix, and Shopify.</p>
-            <div class="chips"><span>WordPress</span><span>Wix Studio</span><span>Shopify</span></div>
-            <a class="more" href="#live">See Live Projects <svg><use href="#arrow"/></svg></a>
-          </div>
-        </article>
-        <article class="card work wide">
-          <div class="viq" aria-hidden="true">
-            <div class="win">
-              <div class="bar">Violations IQ closed beta is now accepting applications from CINC Systems users · <span>Request Free Trial →</span></div>
-              <div class="nav"><span class="brand"><i></i>Violations IQ</span><span>How it works · Why Violations IQ · Trust</span><b>Request Free Trial</b></div>
-              <div class="hero">
-                <span class="eb">● VIOLATIONS IQ · CLOSED BETA</span>
-                <h4>Turn HOA governing documents into a CINC-ready violation catalog.</h4>
-                <p>CC&amp;Rs, bylaws and fine schedules turned into a human-reviewed violation catalog, pushed straight into CINC.</p>
-                <div class="btns"><span>Request Free Trial</span><span>See it in action</span></div>
-                <span class="tag">For CINC Systems Users Only · Limited Beta Access</span>
-              </div>
-            </div>
-          </div>
-          <div class="body">
-            <div class="top"><h3>Violations IQ</h3><span class="kind grad-text">Sliceo · Product Launch</span></div>
-            <p>A beta landing page for Sliceo's Violations IQ. It turns HOA governing documents into CINC-ready violation catalogs and translates a technical, AI-assisted workflow into one clear action: requesting a free trial.</p>
-            <div class="chips"><span>Landing page</span><span>B2B SaaS</span><span>Sliceo brand</span><span>Conversion</span></div>
-            <a class="more" href="https://violationsiq-beta.sliceo.co/" target="_blank" rel="noopener">View Live Page <svg><use href="#ext"/></svg></a>
-          </div>
-        </article>
+        <div class="portfolio-index">
+          <a class="card index-card" href="#client-work">
+            <span class="pill indigo">Client Work</span>
+            <h3>Browse the full client archive</h3>
+            <p>BoardMatch, OnCall PRO, Bridge Accounting, Violations IQ, Alpha B Group, Mt. Hood, and more, grouped by team.</p>
+            <span class="more">Open Client Work <svg><use href="#arrow"/></svg></span>
+          </a>
+          <a class="card index-card" href="#assets">
+            <span class="pill green">Supporting Assets</span>
+            <h3>See standalone production samples</h3>
+            <p>Email and channel-ready samples live here when they are not part of a larger client case study.</p>
+            <span class="more">Open Supporting Assets <svg><use href="#arrow"/></svg></span>
+          </a>
+        </div>
       </div>
 
     </div>
@@ -577,39 +542,25 @@ footer .base{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);f
   </section>
 
   <!-- DIGITAL ASSETS -->
-  <section class="sec" id="assets">
+  <section class="sec alt" id="assets">
     <div class="wrap">
       <div class="sec-head">
-        <span class="pill indigo">Digital Assets</span>
-        <h2>Production-ready <span class="grad-text">campaign assets</span></h2>
-        <p>Email layouts, landing-page samples, and marketing materials that support the main projects.</p>
+        <span class="pill green">Supporting Assets</span>
+        <h2>Standalone work, <span class="grad-text">ready to show</span></h2>
+        <p>Channel-specific samples that sit outside the named client projects above.</p>
       </div>
-      <div class="filters" role="group" aria-label="Filter assets">
-        <button type="button" data-f="all" aria-pressed="true">All</button>
-        <button type="button" data-f="email" aria-pressed="false">Email</button>
-        <button type="button" data-f="more" aria-pressed="false">Web &amp; Collateral</button>
-      </div>
-      <div class="agrid">
-        <article class="card asset wide" data-k="email">
+      <div class="support-grid">
+        <article class="card asset wide">
           <div class="thumb" style="background:#0B0B0B"><img src="assets/hero_img.webp" alt="Parimatch newsletter hero: football player beside the partner app" loading="lazy" style="object-fit:contain"></div>
           <div class="body"><span class="cat grad-text">HTML Email · Newsletter</span><h3>Parimatch Affiliate Newsletter</h3><p>Responsive newsletter for Parimatch's Vietnam affiliate program, with a dark, high-contrast brand look, clear section hierarchy and repeated partner CTAs. Coded as table-based HTML so it renders in real email clients.</p><div class="chips"><span>Email</span><span>Responsive</span><span>Localized</span></div><a class="more" href="https://kumiyeonssi.github.io/newsletter/perimatch_newsletter_vn.html" target="_blank" rel="noopener">View Newsletter <svg><use href="#ext"/></svg></a></div>
         </article>
-        <article class="card asset text" data-k="more">
-          <div class="thumb"><svg viewBox="0 0 24 24" fill="none" stroke="url(#g)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
-          <div class="body"><span class="cat grad-text">Web Design</span><h3>Landing Page Samples</h3><p>Landing page layouts and hero sections for campaigns and businesses.</p><div class="chips"><span>Landing page</span><span>Hero section</span></div></div>
-        </article>
-        <article class="card asset text" data-k="more">
-          <div class="thumb"><svg viewBox="0 0 24 24" fill="none" stroke="url(#g)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 15l5-5 4 4 3-3 6 6"/></svg></div>
-          <div class="body"><span class="cat grad-text">Marketing Assets</span><h3>Social &amp; Campaign Graphics</h3><p>Graphics for social posts, campaigns, content marketing and brand communication.</p><div class="chips"><span>Social</span><span>Campaign</span></div></div>
-        </article>
-        <article class="card asset text" data-k="more">
-          <div class="thumb"><svg viewBox="0 0 24 24" fill="none" stroke="url(#g)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-          <div class="body"><span class="cat grad-text">Collateral</span><h3>Presentation &amp; Sales Assets</h3><p>Presentation layouts, sales decks and client-facing collateral.</p><div class="chips"><span>Decks</span><span>Branding</span></div></div>
-        </article>
+        <aside class="card asset-note">
+          <span class="pill indigo">One project, one home</span>
+          <h3>Projects live once on the page.</h3>
+          <p>Named client work stays in Client Work. This area is reserved for standalone samples that help show range without repeating a case study.</p>
+          <a class="more" href="#client-work">Browse Client Work <svg><use href="#arrow"/></svg></a>
+        </aside>
       </div>
-      <!-- <div class="edu" style="margin-top:40px">
-        <a class="btn outline" href="others.html">Open the Full Digital Assets Page <svg width="16" height="16"><use href="#arrow"/></svg></a>
-      </div> -->
     </div>
   </section>
 
@@ -801,8 +752,9 @@ footer .base{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);f
       </div>
       <div class="col">
         <h4>Work</h4>
-        <a href="#work">Selected Work</a>
-        <a href="#assets">Digital Assets</a>
+        <a href="#work">Featured Work</a>
+        <a href="#client-work">Client Work</a>
+        <a href="#assets">Supporting Assets</a>
         <a href="#live">Live Projects</a>
       </div>
       <div class="col">
