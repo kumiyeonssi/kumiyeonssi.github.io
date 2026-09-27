@@ -320,7 +320,7 @@ footer .base{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);f
 .client-card{overflow:hidden;display:flex;flex-direction:column;min-width:0;transition:transform .28s ease,box-shadow .28s ease}
 .client-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
 .client-media{position:relative;display:block;width:100%;aspect-ratio:4/3;padding:0;border:0;border-radius:0;background:#111827;overflow:hidden;cursor:zoom-in;color:inherit;text-align:inherit;appearance:none}
-.client-media::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(15,23,42,.05) 24%,rgba(15,23,42,.84) 100%);pointer-events:none}
+.client-media::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(15,23,42,.18) 10%,rgba(15,23,42,.94) 100%);pointer-events:none}
 .client-media::after{content:'Open preview';position:absolute;z-index:3;inset:auto 14px 14px auto;padding:8px 11px;border:1px solid rgba(255,255,255,.35);border-radius:999px;background:rgba(15,23,42,.78);color:#fff;font:700 12px var(--text);letter-spacing:.02em;opacity:0;transform:translateY(5px);transition:opacity .25s ease,transform .25s ease;pointer-events:none}
 .client-media img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
 .client-media:hover img,.client-media:focus-visible img{transform:scale(1.045)}
@@ -332,14 +332,19 @@ footer .base{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);f
 .client-cover strong{font:700 clamp(20px,2.4vw,28px)/1.05 var(--head);letter-spacing:-.02em}
 .client-cover small{font:600 12px var(--text);color:rgba(255,255,255,.82)}
 .client-media.text{display:grid;place-items:center;background:linear-gradient(135deg,#111B33,#273B7A 55%,#EC4899)}
+.client-media.text{cursor:pointer}
+.client-media.text::after{content:'Visit live site'}
 .project-label{display:flex;flex-direction:column;gap:2px;color:#fff;text-align:center;letter-spacing:.12em;text-transform:uppercase}
 .project-label span{font:600 13px var(--text);opacity:.82}
 .project-label strong{font:700 clamp(26px,4vw,42px)/1 var(--head);letter-spacing:-.03em}
+.project-label small{font:600 12px var(--text);letter-spacing:.03em;text-transform:none;color:rgba(255,255,255,.78)}
 .client-card .body{display:flex;flex-direction:column;gap:9px;padding:20px}
 .client-card .cat{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
 .client-card h4{font:700 21px/1.1 var(--head);letter-spacing:-.01em;margin:0}
 .client-card p{margin:0;color:var(--body);font-size:14px}
 .client-card .chips{margin-top:auto;padding-top:6px}
+.project-meta{display:flex;flex-direction:column;gap:3px;padding-top:8px;border-top:1px solid var(--line);color:var(--soft);font-size:12px;line-height:1.4}
+.project-meta b{color:var(--ink);font-weight:700}
 .client-card .more{align-self:flex-start;margin-top:2px}
 .client-process{margin-top:44px;padding:28px 30px;border:1px solid var(--line);border-radius:24px;background:#fff;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.5fr);gap:28px;align-items:center}
 .client-process h3{font-size:clamp(24px,3vw,32px);line-height:1.08;margin:12px 0 8px}
@@ -350,11 +355,15 @@ footer .base{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);f
 .process-step span{display:block;font-size:14px;color:var(--body);line-height:1.35}
 /* lightbox */
 .lb{position:fixed;inset:0;z-index:50;background:rgba(11,18,36,.88);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:calc(20px + env(safe-area-inset-top,0px)) 20px calc(20px + env(safe-area-inset-bottom,0px))}
-.lb figure{margin:0;max-width:min(1100px,100%);display:flex;flex-direction:column;gap:12px}
-.lb img{max-width:100%;max-height:72vh;border-radius:14px;display:block;margin:0 auto;box-shadow:0 30px 80px -20px rgba(0,0,0,.6)}
+.lb figure{margin:0;max-width:min(1100px,100%);max-height:72vh;overflow:auto;display:flex;flex-direction:column;gap:12px;border-radius:14px}
+.lb img{max-width:100%;max-height:72vh;border-radius:14px;display:block;margin:0 auto;box-shadow:0 30px 80px -20px rgba(0,0,0,.6);transform-origin:center top;transition:transform .2s ease;cursor:zoom-in}
+.lb img.is-zoomed{max-width:none;max-height:none;cursor:zoom-out}
 .lb figcaption{color:#E2E8F0;text-align:center;font-size:15px}
 .lb figcaption b{font-family:var(--head);color:#fff;font-size:18px;display:block}
-.lb .ctrl{display:flex;gap:10px}
+.lb .ctrl{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+.lb .sequence-controls{display:flex;gap:10px}
+.lb .zoom-controls{display:flex;gap:8px}
+.lb .zoom-controls button{min-width:44px;padding:0 12px}
 .lb button{font:600 14px var(--text);min-height:44px;padding:0 18px;border-radius:12px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;cursor:pointer}
 .lb button:hover{background:rgba(255,255,255,.16)}
 .lb .x{position:absolute;top:calc(16px + env(safe-area-inset-top,0px));right:16px}
@@ -497,27 +506,31 @@ footer .base{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);f
           <div class="client-grid">
             <article class="card client-card">
               <button class="client-media" type="button" data-open="boardmatch" aria-label="Open BoardMatch content system preview"><img src="assets/portfolio/boardmatch/reserve-study.png" alt="BoardMatch reserve study campaign graphic" loading="lazy"><span class="client-cover"><span class="brand">BoardMatch</span><strong>Content system</strong><small>LinkedIn carousel · Campaign design</small></span></button>
-              <div class="body"><span class="cat grad-text">Sliceo · BoardMatch</span><h4>BoardMatch content system</h4><p>Editorial campaign assets that turn board-level operational risks into clear, memorable stories.</p><div class="chips"><span>LinkedIn carousel</span><span>Campaign design</span></div><a class="more" href="assets/portfolio/boardmatch/board-notes-02.pdf" target="_blank" rel="noopener">Open Board Notes <svg><use href="#ext"/></svg></a></div>
+              <div class="body"><span class="cat grad-text">Sliceo · BoardMatch</span><h4>BoardMatch content system</h4><p>Editorial campaign assets that turn board-level operational risks into clear, memorable stories.</p><div class="chips"><span>LinkedIn carousel</span><span>Campaign design</span></div><div class="project-meta"><span><b>Role:</b> Campaign design</span><span><b>Tools:</b> Figma · Photoshop · AI-assisted concepts</span></div><a class="more" href="assets/portfolio/boardmatch/board-notes-02.pdf" target="_blank" rel="noopener">Open Board Notes <svg><use href="#ext"/></svg></a></div>
             </article>
             <article class="card client-card">
               <button class="client-media" type="button" data-open="oncallpro" aria-label="Open OnCall PRO product campaign preview"><img src="assets/portfolio/sliceo/oncall-pro-1.png" alt="OnCall PRO maintenance workflow campaign graphic" loading="lazy"><span class="client-cover"><span class="brand">OnCall PRO</span><strong>Product campaigns</strong><small>Product marketing · Social campaign</small></span></button>
-              <div class="body"><span class="cat grad-text">Sliceo · OnCall PRO</span><h4>OnCall PRO product campaigns</h4><p>Product-led visuals that make maintenance handoffs, delays, and connected operations easy to understand.</p><div class="chips"><span>Product marketing</span><span>Social campaign</span></div><a class="more" href="assets/portfolio/sliceo/field-notes-email.html" target="_blank" rel="noopener">Open Field Notes email <svg><use href="#ext"/></svg></a></div>
+              <div class="body"><span class="cat grad-text">Sliceo · OnCall PRO</span><h4>OnCall PRO product campaigns</h4><p>Product-led visuals that make maintenance handoffs, delays, and connected operations easy to understand.</p><div class="chips"><span>Product marketing</span><span>Social campaign</span></div><div class="project-meta"><span><b>Role:</b> Product storytelling</span><span><b>Tools:</b> Figma · Photoshop · AI-assisted concepts</span></div><a class="more" href="assets/portfolio/sliceo/field-notes-email.html" target="_blank" rel="noopener">Open Field Notes email <svg><use href="#ext"/></svg></a></div>
             </article>
             <article class="card client-card">
               <button class="client-media" type="button" data-open="bridgeaccounting" aria-label="Open Bridge Accounting launch graphics preview"><img src="assets/portfolio/sliceo/bridge-accounting-2.png" alt="Bridge Accounting announcement campaign graphic" loading="lazy"><span class="client-cover"><span class="brand">Bridge Accounting</span><strong>Launch graphics</strong><small>Launch campaign · Visual direction</small></span></button>
-              <div class="body"><span class="cat grad-text">Sliceo · Bridge Accounting</span><h4>Bridge Accounting launch graphics</h4><p>Announcement and product storytelling assets that introduce a new accounting platform with a confident, technical visual language.</p><div class="chips"><span>Launch campaign</span><span>Visual direction</span></div></div>
+              <div class="body"><span class="cat grad-text">Sliceo · Bridge Accounting</span><h4>Bridge Accounting launch graphics</h4><p>Announcement and product storytelling assets that introduce a new accounting platform with a confident, technical visual language.</p><div class="chips"><span>Launch campaign</span><span>Visual direction</span></div><div class="project-meta"><span><b>Role:</b> Visual direction</span><span><b>Tools:</b> Figma · Photoshop · AI-assisted mockups</span></div></div>
             </article>
             <article class="card client-card">
               <button class="client-media contain" type="button" data-open="violationsiq" aria-label="Open Violations IQ email system preview"><img src="assets/portfolio/sliceo/violations-iq-preview.png" alt="Violations IQ email template collection preview" loading="lazy"><span class="client-cover"><span class="brand">Violations IQ</span><strong>Email system</strong><small>Lifecycle email · Product launch</small></span></button>
-              <div class="body"><span class="cat grad-text">Sliceo · Violations IQ</span><h4>Violations IQ email system</h4><p>An 11-template onboarding and trial sequence covering beta invitation, approval, education, follow-up, and conversion.</p><div class="chips"><span>HTML email</span><span>Lifecycle design</span></div><a class="more" href="assets/portfolio/sliceo/violations-iq-email-templates.pdf" target="_blank" rel="noopener">View template collection <svg><use href="#ext"/></svg></a></div>
+              <div class="body"><span class="cat grad-text">Sliceo · Violations IQ</span><h4>Violations IQ email system</h4><p>An 11-template onboarding and trial sequence covering beta invitation, approval, education, follow-up, and conversion.</p><div class="chips"><span>HTML email</span><span>Lifecycle design</span></div><div class="project-meta"><span><b>Role:</b> Email system design</span><span><b>Tools:</b> Figma · Photoshop · HTML/CSS</span></div><a class="more" href="assets/portfolio/sliceo/violations-iq-email-templates.pdf" target="_blank" rel="noopener">View template collection <svg><use href="#ext"/></svg></a></div>
             </article>
             <article class="card client-card">
               <button class="client-media" type="button" data-open="juneteenth" aria-label="Open Juneteenth editorial series preview"><img src="assets/portfolio/sliceo/juneteenth.png" alt="Sliceo Juneteenth campaign graphic" loading="lazy"><span class="client-cover"><span class="brand">Sliceo</span><strong>Juneteenth</strong><small>Social campaign · Editorial series</small></span></button>
-              <div class="body"><span class="cat grad-text">Sliceo · Social campaign</span><h4>Juneteenth editorial series</h4><p>A branded social series using community, operations, and technology as a connected visual narrative.</p><div class="chips"><span>Social campaign</span><span>Art direction</span></div></div>
+              <div class="body"><span class="cat grad-text">Sliceo · Social campaign</span><h4>Juneteenth editorial series</h4><p>A branded social series using community, operations, and technology as a connected visual narrative.</p><div class="chips"><span>Social campaign</span><span>Art direction</span></div><div class="project-meta"><span><b>Role:</b> Art direction</span><span><b>Tools:</b> Figma · Photoshop · AI-assisted imagery</span></div></div>
             </article>
             <article class="card client-card">
               <button class="client-media" type="button" data-open="memorialday" aria-label="Open Memorial Day campaign preview"><img src="assets/portfolio/sliceo/memorial-day-1.png" alt="Sliceo Memorial Day campaign graphic" loading="lazy"><span class="client-cover"><span class="brand">Sliceo</span><strong>Memorial Day</strong><small>Social campaign · Seasonal story</small></span></button>
-              <div class="body"><span class="cat grad-text">Sliceo · Memorial Day</span><h4>Memorial Day campaign</h4><p>A five-part social story balancing remembrance, community, and Sliceo’s future-facing operations narrative.</p><div class="chips"><span>Social series</span><span>Campaign design</span></div></div>
+              <div class="body"><span class="cat grad-text">Sliceo · Memorial Day</span><h4>Memorial Day campaign</h4><p>A five-part social story balancing remembrance, community, and Sliceo’s future-facing operations narrative.</p><div class="chips"><span>Social series</span><span>Campaign design</span></div><div class="project-meta"><span><b>Role:</b> Campaign design</span><span><b>Tools:</b> Figma · Photoshop · AI-assisted imagery</span></div></div>
+            </article>
+            <article class="card client-card">
+              <button class="client-media contain" type="button" data-open="technologystrategy" aria-label="Open Sliceo hero asset proposal preview"><img src="assets/portfolio/unified-global/technology-strategy.png" alt="Sliceo technology strategy hero asset proposal" loading="lazy"><span class="client-cover"><span class="brand">Sliceo</span><strong>Hero asset proposal</strong><small>Web visual · Concept direction</small></span></button>
+              <div class="body"><span class="cat grad-text">Sliceo · Concept work</span><h4>Technology strategy hero asset</h4><p>A long-form hero asset proposal that turns complex systems thinking into a clear, credible visual story.</p><div class="chips"><span>Hero asset</span><span>Concept direction</span></div><div class="project-meta"><span><b>Role:</b> Web visual direction</span><span><b>Tools:</b> Figma · Photoshop · AI-assisted concepting</span></div></div>
             </article>
           </div>
         </div>
@@ -525,16 +538,16 @@ footer .base{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);f
           <div class="client-group-head"><h3>Unified Global</h3><p>Web and digital marketing work supporting Alpha B Group, Mt. Hood, and the broader Unified Global ecosystem.</p></div>
           <div class="client-grid">
             <article class="card client-card">
-              <button class="client-media contain" type="button" data-open="technologystrategy" aria-label="Open technology strategy page preview"><img src="assets/portfolio/unified-global/technology-strategy.png" alt="Technology strategy landing page layout" loading="lazy"><span class="client-cover"><span class="brand">Unified Global</span><strong>Technology strategy</strong><small>Web layout · Technology advisory</small></span></button>
-              <div class="body"><span class="cat grad-text">Unified Global · Web</span><h4>Technology strategy page</h4><p>A long-form page structure that makes complex technology, systems integration, and operational impact easier to scan.</p><div class="chips"><span>Web layout</span><span>Content structure</span><span>Responsive design</span></div></div>
+              <a class="client-media text" href="https://unifiedgroupsolutions.com/" target="_blank" rel="noopener" aria-label="Visit Unified Global website"><span class="project-label"><span>Unified Global</span><strong>Live website</strong><small>WordPress · Website redesign</small></span></a>
+              <div class="body"><span class="cat grad-text">Unified Global · Live site</span><h4>Unified Global website</h4><p>A live accounting and advisory site with clearer service paths, updated messaging, and a more approachable brand presence.</p><div class="chips"><span>Web design</span><span>WordPress</span></div><div class="project-meta"><span><b>Role:</b> Web design + content structure</span><span><b>Tools:</b> Figma · Photoshop · WordPress</span></div><a class="more" href="https://unifiedgroupsolutions.com/" target="_blank" rel="noopener">Visit unifiedgroupsolutions.com <svg><use href="#ext"/></svg></a></div>
             </article>
             <article class="card client-card">
               <button class="client-media" type="button" data-open="alphab" aria-label="Open Alpha B Group website preview"><img src="assets/portfolio/unified-global/alpha-b.png" alt="Alpha B Group website layout" loading="lazy"><span class="client-cover"><span class="brand">Alpha B Group</span><strong>Website system</strong><small>Web design · Brand system</small></span></button>
-              <div class="body"><span class="cat grad-text">Unified Global · Client work</span><h4>Alpha B Group</h4><p>A clean tax and accounting website system built around approachable messaging, clear service paths, and a confident green brand.</p><div class="chips"><span>Web design</span><span>Brand system</span></div></div>
+              <div class="body"><span class="cat grad-text">Unified Global · Client work</span><h4>Alpha B Group</h4><p>A clean tax and accounting website system built around approachable messaging, clear service paths, and a confident green brand.</p><div class="chips"><span>Web design</span><span>Brand system</span></div><div class="project-meta"><span><b>Role:</b> Web design + brand system</span><span><b>Tools:</b> Figma · Photoshop</span></div></div>
             </article>
             <article class="card client-card">
               <button class="client-media" type="button" data-open="mthood" aria-label="Open Mt. Hood Tax and Accounting website preview"><img src="assets/portfolio/unified-global/mt-hood.png" alt="Mt. Hood Tax and Accounting website layout" loading="lazy"><span class="client-cover"><span class="brand">Mt. Hood</span><strong>Website refresh</strong><small>Web design · Content structure</small></span></button>
-              <div class="body"><span class="cat grad-text">Unified Global · Client work</span><h4>Mt. Hood</h4><p>A service-led website refresh that makes the firm’s people, resources, and next steps easier to find.</p><div class="chips"><span>Web design</span><span>Content structure</span></div></div>
+              <div class="body"><span class="cat grad-text">Unified Global · Client work</span><h4>Mt. Hood</h4><p>A service-led website refresh that makes the firm’s people, resources, and next steps easier to find.</p><div class="chips"><span>Web design</span><span>Content structure</span></div><div class="project-meta"><span><b>Role:</b> Web design + content structure</span><span><b>Tools:</b> Figma · Photoshop</span></div></div>
             </article>
           </div>
         </div>
@@ -783,7 +796,7 @@ footer .base{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);f
 <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Mockup viewer">
   <button class="x" type="button" id="lbClose">Close</button>
   <figure><img id="lbImg" src="" alt=""><figcaption id="lbCap"></figcaption></figure>
-  <div class="ctrl"><button type="button" id="lbPrev">← Previous</button><button type="button" id="lbNext">Next →</button></div>
+  <div class="ctrl"><div class="sequence-controls"><button type="button" id="lbPrev">← Previous</button><button type="button" id="lbNext">Next →</button></div><div class="zoom-controls"><button type="button" id="lbZoomOut" aria-label="Zoom out">−</button><button type="button" id="lbZoomReset">Reset zoom</button><button type="button" id="lbZoomIn" aria-label="Zoom in">+</button></div></div>
 </div>
 
 <script>
@@ -798,20 +811,27 @@ footer .base{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);f
     violationsiq:[['portfolio/sliceo/violations-iq-preview.png','Violations IQ','Email template collection']],
     juneteenth:[['portfolio/sliceo/juneteenth.png','Sliceo','Juneteenth editorial series']],
     memorialday:[['portfolio/sliceo/memorial-day-1.png','Sliceo','Memorial Day campaign'],['portfolio/sliceo/memorial-day-2.png','Sliceo','Memorial Day campaign'],['portfolio/sliceo/memorial-day-3.png','Sliceo','Memorial Day campaign'],['portfolio/sliceo/memorial-day-4.png','Sliceo','Memorial Day campaign'],['portfolio/sliceo/memorial-day-5.png','Sliceo','Memorial Day campaign']],
-    technologystrategy:[['portfolio/unified-global/technology-strategy.png','Unified Global','Technology strategy page']],
+    technologystrategy:[['portfolio/unified-global/technology-strategy.png','Sliceo','Technology strategy hero asset proposal']],
     alphab:[['portfolio/unified-global/alpha-b.png','Alpha B Group','Website layout']],
     mthood:[['portfolio/unified-global/mt-hood.png','Mt. Hood','Tax and accounting website layout']]
   };
-  var lb=document.getElementById('lb'),img=document.getElementById('lbImg'),cap=document.getElementById('lbCap'),prev=document.getElementById('lbPrev'),next=document.getElementById('lbNext'),list=[],i=0,last=null;
-  function show(){var it=list[i];img.src='assets/'+it[0];img.alt=it[1]+' mockup: '+it[2];cap.innerHTML='';var b=document.createElement('b');b.textContent=it[1];cap.appendChild(b);cap.appendChild(document.createTextNode(it[2]+' · '+(i+1)+' of '+list.length));prev.hidden=next.hidden=list.length<2;}
+  var lb=document.getElementById('lb'),img=document.getElementById('lbImg'),cap=document.getElementById('lbCap'),prev=document.getElementById('lbPrev'),next=document.getElementById('lbNext'),zoomIn=document.getElementById('lbZoomIn'),zoomOut=document.getElementById('lbZoomOut'),zoomReset=document.getElementById('lbZoomReset'),list=[],i=0,last=null,zoom=1;
+  function renderZoom(){img.style.width=zoom===1?'':(zoom*100)+'%';img.classList.toggle('is-zoomed',zoom>1);zoomOut.disabled=zoom<=1;zoomIn.disabled=zoom>=3;zoomReset.disabled=zoom===1;}
+  function changeZoom(amount){zoom=Math.min(3,Math.max(1,Number((zoom+amount).toFixed(2))));renderZoom();}
+  function resetZoom(){zoom=1;renderZoom();}
+  function show(){var it=list[i];resetZoom();img.src='assets/'+it[0];img.alt=it[1]+' mockup: '+it[2];cap.innerHTML='';var b=document.createElement('b');b.textContent=it[1];cap.appendChild(b);cap.appendChild(document.createTextNode(it[2]+' · '+(i+1)+' of '+list.length));prev.hidden=next.hidden=list.length<2;}
   function open(k,btn){list=sets[k]||[];i=0;last=btn;show();lb.hidden=false;document.getElementById('lbClose').focus();}
   function close(){lb.hidden=true;if(last)last.focus();}
   document.querySelectorAll('[data-open]').forEach(function(b){b.addEventListener('click',function(){open(b.getAttribute('data-open'),b);});});
   document.getElementById('lbClose').addEventListener('click',close);
   document.getElementById('lbPrev').addEventListener('click',function(){i=(i-1+list.length)%list.length;show();});
   document.getElementById('lbNext').addEventListener('click',function(){i=(i+1)%list.length;show();});
+  zoomIn.addEventListener('click',function(){changeZoom(.5);});
+  zoomOut.addEventListener('click',function(){changeZoom(-.5);});
+  zoomReset.addEventListener('click',resetZoom);
+  img.addEventListener('click',function(){zoom===1?changeZoom(1):resetZoom();});
   lb.addEventListener('click',function(e){if(e.target===lb)close();});
-  lb.addEventListener('keydown',function(e){if(e.key==='Escape')close();if(e.key==='ArrowRight')document.getElementById('lbNext').click();if(e.key==='ArrowLeft')document.getElementById('lbPrev').click();});
+  lb.addEventListener('keydown',function(e){if(e.key==='Escape')close();if(e.key==='ArrowRight')document.getElementById('lbNext').click();if(e.key==='ArrowLeft')document.getElementById('lbPrev').click();if(e.key==='+'||e.key==='=')changeZoom(.5);if(e.key==='-')changeZoom(-.5);if(e.key==='0')resetZoom();});
   var fb=document.querySelectorAll('.filters button');
   fb.forEach(function(b){b.addEventListener('click',function(){var f=b.getAttribute('data-f');fb.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});document.querySelectorAll('.asset').forEach(function(a){a.hidden=!(f==='all'||a.getAttribute('data-k')===f);});});});
 })();
