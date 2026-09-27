@@ -299,6 +299,34 @@ footer .base{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);f
 .asset.wide{flex-direction:row}
 .asset.wide .thumb{flex:1.2;max-height:360px}
 .asset.wide .body{flex:1;justify-content:center}
+/* client work */
+.client-groups{display:flex;flex-direction:column;gap:44px}
+.client-group{display:flex;flex-direction:column;gap:16px}
+.client-group-head{display:flex;align-items:end;justify-content:space-between;gap:20px}
+.client-group-head h3{font-size:clamp(24px,3vw,32px)}
+.client-group-head p{margin:0;color:var(--body);max-width:42em;font-size:15px}
+.client-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.client-card{overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.client-media{aspect-ratio:4/3;background:#111827;overflow:hidden}
+.client-media img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.client-media.contain img{object-fit:contain;padding:14px}
+.client-media.text{display:grid;place-items:center;background:linear-gradient(135deg,#111B33,#273B7A 55%,#EC4899)}
+.project-label{display:flex;flex-direction:column;gap:2px;color:#fff;text-align:center;letter-spacing:.12em;text-transform:uppercase}
+.project-label span{font:600 13px var(--text);opacity:.82}
+.project-label strong{font:700 clamp(26px,4vw,42px)/1 var(--head);letter-spacing:-.03em}
+.client-card .body{display:flex;flex-direction:column;gap:9px;padding:20px}
+.client-card .cat{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.client-card h4{font:700 21px/1.1 var(--head);letter-spacing:-.01em;margin:0}
+.client-card p{margin:0;color:var(--body);font-size:14px}
+.client-card .chips{margin-top:auto;padding-top:6px}
+.client-card .more{align-self:flex-start;margin-top:2px}
+.client-process{margin-top:44px;padding:28px 30px;border:1px solid var(--line);border-radius:24px;background:#fff;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.5fr);gap:28px;align-items:center}
+.client-process h3{font-size:clamp(24px,3vw,32px);line-height:1.08;margin:12px 0 8px}
+.client-process p{margin:0;color:var(--body);font-size:15px;max-width:34em}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.process-step{border-left:2px solid var(--indigo);padding-left:12px;min-height:64px}
+.process-step b{display:block;font:700 13px var(--head);color:var(--indigo);margin-bottom:6px}
+.process-step span{display:block;font-size:14px;color:var(--body);line-height:1.35}
 /* lightbox */
 .lb{position:fixed;inset:0;z-index:50;background:rgba(11,18,36,.88);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:calc(20px + env(safe-area-inset-top,0px)) 20px calc(20px + env(safe-area-inset-bottom,0px))}
 .lb figure{margin:0;max-width:min(1100px,100%);display:flex;flex-direction:column;gap:12px}
@@ -309,8 +337,10 @@ footer .base{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);f
 .lb button{font:600 14px var(--text);min-height:44px;padding:0 18px;border-radius:12px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;cursor:pointer}
 .lb button:hover{background:rgba(255,255,255,.16)}
 .lb .x{position:absolute;top:calc(16px + env(safe-area-inset-top,0px));right:16px}
-@media (max-width:900px){.agrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:900px){.agrid{grid-template-columns:repeat(2,minmax(0,1fr))}.client-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.agrid{grid-template-columns:1fr}.asset.wide{grid-column:auto;flex-direction:column}.asset.wide .thumb{aspect-ratio:16/9;min-height:0}}
+@media (max-width:640px){.client-grid{grid-template-columns:1fr}.client-group-head{display:block}.client-group-head p{margin-top:8px}}
+@media (max-width:700px){.client-process{grid-template-columns:1fr;padding:24px}.process-steps{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:700px){.casino-gallery{grid-template-columns:1fr;grid-template-rows:auto;aspect-ratio:auto}.mockup-btn.wide,.mockup-btn.tall{grid-column:1;grid-row:auto;aspect-ratio:16/9}.mockup-btn.tall img{object-fit:cover}}
 @media (max-width:900px){
   .grid4{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -417,9 +447,9 @@ footer .base{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);f
           </div>
           <div class="body">
             <div class="top"><h3>Sliceo Brand &amp; Campaigns</h3><span class="kind grad-text">Consulting</span></div>
-            <p>I built a type system for a PropTech consulting firm and applied it across LinkedIn carousels, before-and-after graphics, sales decks, newsletters, and the website.</p>
+            <p>I built a type system for a PropTech consulting firm and applied it across BoardMatch, OnCall PRO, Bridge Accounting, LinkedIn campaigns, emails, and the website.</p>
             <div class="chips"><span>LinkedIn carousels</span><span>Sales decks</span><span>Figma</span></div>
-            <a class="more" href="https://www.linkedin.com/company/sliceo/" target="_blank" rel="noopener">View Campaigns <svg><use href="#arrow"/></svg></a>
+            <a class="more" href="#client-work">See Sliceo Work <svg><use href="#arrow"/></svg></a>
           </div>
         </article>
 
@@ -474,6 +504,65 @@ footer .base{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);f
         </article>
       </div>
 
+    </div>
+  </section>
+
+  <!-- CLIENT WORK -->
+  <section class="sec" id="client-work">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="pill indigo">Client Work</span>
+        <h2>More work, grouped by <span class="grad-text">team</span></h2>
+        <p>Selected campaign, product, email, and web work created through Sliceo and Unified Global.</p>
+      </div>
+      <div class="client-groups">
+        <div class="client-group">
+          <div class="client-group-head"><h3>Sliceo</h3><p>Brand and product storytelling across BoardMatch, OnCall PRO, Bridge Accounting, and Violations IQ.</p></div>
+          <div class="client-grid">
+            <article class="card client-card">
+              <div class="client-media"><img src="assets/portfolio/boardmatch/reserve-study.png" alt="BoardMatch reserve study campaign graphic" loading="lazy"></div>
+              <div class="body"><span class="cat grad-text">Sliceo · BoardMatch</span><h4>BoardMatch content system</h4><p>Editorial campaign assets that turn board-level operational risks into clear, memorable stories.</p><div class="chips"><span>LinkedIn carousel</span><span>Campaign design</span></div><a class="more" href="assets/portfolio/boardmatch/board-notes-02.pdf" target="_blank" rel="noopener">Open Board Notes <svg><use href="#ext"/></svg></a></div>
+            </article>
+            <article class="card client-card">
+              <div class="client-media"><img src="assets/portfolio/sliceo/oncall-pro-1.png" alt="OnCall PRO maintenance workflow campaign graphic" loading="lazy"></div>
+              <div class="body"><span class="cat grad-text">Sliceo · OnCall PRO</span><h4>OnCall PRO product campaigns</h4><p>Product-led visuals that make maintenance handoffs, delays, and connected operations easy to understand.</p><div class="chips"><span>Product marketing</span><span>Social campaign</span></div><a class="more" href="assets/portfolio/sliceo/field-notes-email.html" target="_blank" rel="noopener">Open Field Notes email <svg><use href="#ext"/></svg></a></div>
+            </article>
+            <article class="card client-card">
+              <div class="client-media"><img src="assets/portfolio/sliceo/bridge-accounting-2.png" alt="Bridge Accounting announcement campaign graphic" loading="lazy"></div>
+              <div class="body"><span class="cat grad-text">Sliceo · Bridge Accounting</span><h4>Bridge Accounting launch graphics</h4><p>Announcement and product storytelling assets that introduce a new accounting platform with a confident, technical visual language.</p><div class="chips"><span>Launch campaign</span><span>Visual direction</span></div></div>
+            </article>
+            <article class="card client-card">
+              <div class="client-media contain"><img src="assets/portfolio/sliceo/violations-iq-preview.png" alt="Violations IQ email template collection preview" loading="lazy"></div>
+              <div class="body"><span class="cat grad-text">Sliceo · Violations IQ</span><h4>Violations IQ email system</h4><p>An 11-template onboarding and trial sequence covering beta invitation, approval, education, follow-up, and conversion.</p><div class="chips"><span>HTML email</span><span>Lifecycle design</span></div><a class="more" href="assets/portfolio/sliceo/violations-iq-email-templates.pdf" target="_blank" rel="noopener">View template collection <svg><use href="#ext"/></svg></a></div>
+            </article>
+            <article class="card client-card">
+              <div class="client-media"><img src="assets/portfolio/sliceo/juneteenth.png" alt="Sliceo Juneteenth campaign graphic" loading="lazy"></div>
+              <div class="body"><span class="cat grad-text">Sliceo · Social campaign</span><h4>Juneteenth editorial series</h4><p>A branded social series using community, operations, and technology as a connected visual narrative.</p><div class="chips"><span>Social campaign</span><span>Art direction</span></div></div>
+            </article>
+          </div>
+        </div>
+        <div class="client-group">
+          <div class="client-group-head"><h3>Unified Global</h3><p>Web and digital marketing work supporting Alpha B Group, Mt. Hood, and the broader Unified Global ecosystem.</p></div>
+          <div class="client-grid">
+            <article class="card client-card">
+              <div class="client-media contain"><img src="assets/portfolio/unified-global/technology-strategy.png" alt="Technology strategy landing page layout" loading="lazy"></div>
+              <div class="body"><span class="cat grad-text">Unified Global · Web</span><h4>Technology strategy page</h4><p>A long-form page structure that makes complex technology, systems integration, and operational impact easier to scan.</p><div class="chips"><span>Web layout</span><span>Content structure</span><span>Responsive design</span></div></div>
+            </article>
+            <article class="card client-card">
+              <div class="client-media text"><div class="project-label"><span>ALPHA B</span><strong>Group</strong></div></div>
+              <div class="body"><span class="cat grad-text">Unified Global · Client work</span><h4>Alpha B Group</h4><p>Included in the Unified Global client portfolio. Project visuals and specific deliverables can be added as the final case materials are collected.</p><div class="chips"><span>Web</span><span>Marketing</span></div></div>
+            </article>
+            <article class="card client-card">
+              <div class="client-media text"><div class="project-label"><span>MT.</span><strong>HOOD</strong></div></div>
+              <div class="body"><span class="cat grad-text">Unified Global · Client work</span><h4>Mt. Hood</h4><p>Included in the Unified Global client portfolio. The entry is ready for the matching screenshots or live link when available.</p><div class="chips"><span>Web</span><span>Marketing</span></div></div>
+            </article>
+          </div>
+        </div>
+      </div>
+      <div class="client-process">
+        <div><span class="pill indigo">My process</span><h3>From brief to a connected system.</h3><p>I keep the message, visual direction, production details, and final channel connected from the first idea to the finished asset.</p></div>
+        <div class="process-steps"><div class="process-step"><b>01 · Understand</b><span>Brief, audience, offer, and placement.</span></div><div class="process-step"><b>02 · Shape</b><span>Hierarchy, direction, and visual system.</span></div><div class="process-step"><b>03 · Create</b><span>Production-ready layouts and variations.</span></div><div class="process-step"><b>04 · Refine</b><span>Feedback, localization, and handoff.</span></div></div>
+      </div>
     </div>
   </section>
 
